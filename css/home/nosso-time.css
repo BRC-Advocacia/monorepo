@@ -1,0 +1,157 @@
+.nosso-time {
+  padding: 40px 0;
+  background: url(../../img/decoracoes/top-left-p.svg) no-repeat top 100px left
+    100px;
+  display: grid;
+}
+.nosso-time h2 {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.nosso-time > a {
+  place-self: center;
+}
+.nosso-time-carrossel {
+  padding: 60px;
+  display: flex;
+  gap: 48px;
+  position: relative;
+  overflow-y: hidden;
+  text-align: center;
+}
+.nosso-time-carrossel-img {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0));
+  gap: 3rem;
+  position: relative;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  margin: 0 auto;
+  position: relative;
+}
+
+.nosso-time-carrossel-img a {
+  margin-top: 60px;
+  max-width: 90px;
+  place-self: center;
+}
+
+.nosso-time-carrossel-img:hover {
+  transform: scale(1.2);
+}
+.nosso-time-carrossel-img:hover::after {
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(21, 38, 64, 0.8);
+}
+
+.nosso-time-carrossel-img img {
+  max-width: 400px;
+  max-height: 400px;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 5px 5px 10px rgba(12, 20, 27, 0.1);
+  border-radius: 4px;
+  position: relative;
+}
+
+#nosso-time-descricao {
+  cursor: default;
+  display: none;
+}
+.nosso-time-carrossel-img:hover #nosso-time-descricao {
+  display: grid;
+  width: 250px;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nosso-time-descricao-linkedin {
+  place-self: center;
+  display: inline;
+  margin: 0 auto;
+  padding: 8px;
+  background-color: var(--cor-p5);
+  border-radius: 50%;
+}
+
+.conheca {
+  display: none;
+}
+@media (max-width: 800px) {
+  .nosso-time-carrossel-img:after {
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: url(../../img/icones/mostrar-mais-botao.svg);
+    background-size: 2rem;
+    background-position: top 20px right 20px;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+  }
+  .nosso-time {
+    padding: 60px 0;
+    background: none;
+  }
+  .nosso-time h2 {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nosso-time-carrossel-img .link {
+    color: var(--cor-0);
+    padding: 8px 16px;
+    border-radius: 4px;
+    background: linear-gradient(var(--cor-p5), var(--cor-p2));
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+  }
+
+  .conheca {
+    color: rgba(6, 29, 48, 1);
+    display: flex;
+    max-width: 250px;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    padding: 12px 24px;
+    text-transform: uppercase;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5;
+    border-radius: 5px;
+    background: var(
+      --gradiente,
+      linear-gradient(var(--cor-p5), rgba(194, 165, 92, 0.7))
+    );
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  }
+
+  .conheca:hover {
+    background: var(
+      --gradiente,
+      linear-gradient(var(--cor-p1), rgba(194, 165, 92, 0.9))
+    );
+  }
+  .nosso-time {
+    padding-top: 0px;
+    padding-bottom: 1rem;
+  }
+  .nosso-time h2 {
+    margin-bottom: 0px;
+  }
+}

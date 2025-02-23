@@ -1,0 +1,189 @@
+.bancario-bg {
+  background: linear-gradient(to top, rgb(1, 1, 1) 10%, transparent),
+    url("../../img/cards/bancario.png") center center no-repeat;
+}
+
+.trabalhista-bg {
+  background: linear-gradient(to top, rgb(1, 1, 1) 10%, transparent),
+    url("../../img/cards/trabalhista.jpg") center center no-repeat;
+}
+
+.civil-bg {
+  background: linear-gradient(to top, rgb(1, 1, 1) 10%, transparent),
+    url("../../img/cards/civil.png") 0px -140px no-repeat;
+}
+
+.societario-bg {
+  background: linear-gradient(to top, rgb(1, 1, 1) 10%, transparent),
+    url("../../img/cards/societario.jpg") center center no-repeat;
+}
+
+.tecnologia-bg {
+  background: linear-gradient(to top, rgb(1, 1, 1) 10%, transparent),
+    url("../../../img/cards/tecnologia.jpg") center center no-repeat;
+}
+
+#home {
+  background-size: cover;
+  position: relative;
+}
+.container-atuacao li {
+  text-align: start;
+  margin-left: 25px;
+  margin-bottom: 5px;
+}
+
+.nossa-area {
+  display: grid;
+  place-items: center;
+  gap: 40px;
+  padding: 60px 0;
+  position: relative;
+}
+
+.areas-conteudo-titulo {
+  text-align: start;
+  padding: 0 20px;
+  padding-bottom: 2rem;
+  margin-top: 300px;
+}
+
+.titulo-detalhe {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.line {
+  background-color: var(--cor-p5);
+  height: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.174);
+}
+
+.titulo-area,
+.paragrafo-area {
+  padding: 20px;
+  text-align: start;
+  max-width: 800px;
+}
+
+.titulo-area-menor {
+  margin-left: 20px;
+}
+
+#atribuicoes {
+  display: block;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 16px;
+}
+
+#atribuicoes h3 {
+  margin-top: 20px;
+}
+
+#atribuicoes ul {
+  padding-bottom: 10px;
+}
+
+.titulo-area {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--azul-escuro);
+}
+
+.area-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr;
+  gap: 10px;
+  padding: 20px;
+}
+
+.area-card ul {
+  list-style-type: disc;
+}
+
+.habilidades-lista {
+  padding: 20px;
+  text-align: start;
+  max-width: 800px;
+  list-style-type: disc;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo-detalhe-2 {
+  grid-column: 1/-1;
+  width: 100%;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+}
+#areas-atuacao {
+  display: grid;
+}
+#areas-atuacao > a {
+  margin-top: 3rem;
+  justify-self: center;
+  font-weight: 200;
+  color: var(--cor-0);
+  background: var(--azul-escuro);
+  transition: 0.3s;
+}
+#areas-atuacao > a:hover {
+  transition: 0.3s;
+  background: var(--cor-p5);
+}
+.area-especifica-introducao-contato img {
+  width: 32px;
+  height: 32px;
+}
+.objetivo {
+  margin-top: 3rem;
+}
+@media (max-width: 1000px) {
+  .titulo-detalhe {
+    max-width: 100%;
+  }
+
+  .civil-bg {
+    background: linear-gradient(to top, rgb(1, 1, 1) 10%, transparent),
+      url("../../img/cards/civil.png") 0px -0px no-repeat;
+  }
+
+  .area-card {
+    width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  .nossa-area {
+    padding: 30px 0;
+    gap: 1.5rem;
+    place-content: center;
+  }
+
+  .areas-conteudo-titulo {
+    margin-top: 140px;
+  }
+  .line {
+    height: 4px;
+  }
+  .titulo-area,
+  .titulo-area {
+    padding: 0 20px;
+  }
+
+  .container-atuacao h2 {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 300px) {
+  .titulo-area {
+    font-size: 1.5rem;
+  }
+}

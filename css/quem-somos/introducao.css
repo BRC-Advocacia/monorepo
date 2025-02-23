@@ -1,0 +1,97 @@
+.quem-somos-bg {
+  background: url("../../img/quem-somos/4-socios.jpg") no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.header.active {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(21, 38, 64, 0.7);
+}
+.quem-somos-bg::after {
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(21, 38, 64, 0.84);
+}
+
+.introducao-quem-somos {
+  display: grid;
+  /* place-items: center; */
+  position: relative;
+  justify-content: center;
+}
+.introducao-quem-somos h1 {
+  text-align: center;
+  font-size: 100px;
+}
+.introducao-quem-somos-titulo {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  margin: 400px 0px;
+  justify-items: start;
+  text-align: start;
+  padding: 0 48px;
+}
+@media (max-with: 1800px) {
+  .introducao-quem-somos-titulo {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}
+@media (max-width: 1200px) {
+  .introducao-quem-somos-titulo {
+    z-index: 1;
+    text-align: start;
+    margin: 200px 0;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  .introducao-quem-somos h1 {
+    font-size: 64px;
+  }
+}
+@media (max-width: 800px) {
+  .introducao-quem-somos-titulo {
+    margin: 160px 20px;
+
+    place-content: center;
+    text-align: center;
+  }
+  .introducao-quem-somos h1 {
+    font-size: 48px;
+  }
+}
+@media (max-width: 600px) {
+  .introducao-quem-somos {
+    padding: 20px 0px;
+  }
+  .introducao-quem-somos h1 {
+    font-size: 32px;
+  }
+  .introducao-quem-somos-titulo {
+    text-align: start;
+    margin: 80px 20px;
+    margin-top: 120px;
+  }
+  .introducao-quem-somos h1 {
+    font-size: 36px;
+  }
+  .quem-somos-bg {
+    background: url("../../img/quem-somos/4-socios.jpg") no-repeat;
+    background-size: cover;
+    position: relative;
+    background-position: center;
+  }
+  .introducao-quem-somos h1 {
+    text-align: start;
+  }
+  .introducao-quem-somos-titulo {
+    padding: 0 0.5rem;
+  }
+}

@@ -1,0 +1,25 @@
+.contato-bg-home {
+  background: url("../../img/home/contato-bg.svg") center center no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-top: 2rem;
+  padding: 2rem;
+}
+#container-contato:after {
+  box-shadow: 0 0;
+  background-color: rgba(21, 38, 64, 0);
+}
+@media (max-width: 600px) {
+  .contato-bg-home {
+    background: url("../../img/home/contato-bg-vertical.svg") center center
+      no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+}
+
+@media (max-width: 370px) {
+  .contato-informacao > p {
+    font-size: 1rem;
+  }
+}

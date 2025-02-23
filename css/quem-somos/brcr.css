@@ -1,0 +1,31 @@
+.conteudo-quem-somos {
+  margin-top: 90px;
+  margin-bottom: 90px;
+  display: grid;
+  grid-template-columns: 1fr 1.125fr;
+  gap: 5rem;
+  align-items: center;
+}
+.conteudo-quem-somos img {
+  border-radius: 10px;
+}
+.conteudo-quem-somos > div {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .conteudo-quem-somos {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-top: 2rem;
+    margin-bottom: 60px;
+    gap: 2rem;
+  }
+
+  .conteudo-quem-somos div > img {
+    width: 500px;
+    border-radius: 10px;
+    display: inline;
+  }
+}

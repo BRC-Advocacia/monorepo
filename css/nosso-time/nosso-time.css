@@ -1,0 +1,247 @@
+.relative {
+  position: relative;
+}
+
+.header-bg-white .troca-de-img-2 {
+  display: none;
+}
+.azul {
+  background-color: var(--azul-escuro);
+}
+
+#azul0 {
+  background-color: transparent;
+  width: 4rem;
+  top: 45px;
+  height: 4rem;
+  border-radius: 50%;
+  left: 300px;
+}
+#azul1 {
+  top: 67px;
+  left: 316px;
+}
+#azul2 {
+  top: 75px;
+  left: 316px;
+}
+#azul3 {
+  top: 83px;
+  left: 316px;
+}
+
+.hamburger-desktop.open #azul1 {
+  background-color: var(--azul-escuro);
+
+  transform: rotate(45deg) translate(3px, 8px);
+  left: 320px;
+}
+
+.hamburger-desktop.open #azul2 {
+  background-color: transparent;
+}
+
+.hamburger-desktop.open #azul3 {
+  background-color: var(--azul-escuro);
+  left: 320px;
+  transform: rotate(-45deg) translate(3px, -8px);
+}
+
+.header-bg-white.active {
+  position: fixed;
+  width: 100%;
+  .troca-de-img-1 {
+    display: none;
+  }
+  .troca-de-img-2 {
+    display: block;
+  }
+  .azul {
+    background-color: var(--cor-0);
+  }
+
+  .hamburger-desktop.open #azul1 {
+    background-color: var(--background);
+
+    transform: rotate(45deg) translate(3px, 8px);
+    left: 320px;
+  }
+
+  .hamburger-desktop.open #azul3 {
+    background-color: var(--background);
+  }
+
+  .hamburger #tes1,
+  .hamburger #tes2,
+  .hamburger #tes3 {
+    background-color: var(--background);
+  }
+}
+.titulo p {
+  margin-bottom: 4px;
+}
+
+.t {
+  margin-top: 120px;
+}
+/* Background destacado em azul escuro */
+.socio-bg {
+  display: grid;
+  background: linear-gradient(
+    to right,
+    var(--background) 30%,
+    var(--azul-escuro) 0%
+  );
+  position: relative;
+}
+
+.socio-bg::after {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(
+    to right,
+    var(--background) 30%,
+    rgba(21, 38, 64, 1) 0%
+  );
+}
+.nossa-equipe {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  z-index: 1;
+}
+
+.nossa-equipe-imagem {
+  display: grid;
+}
+
+.nossa-equipe-imagem ul img {
+  grid-area: 1/1;
+}
+
+.nossa-equipe-conteudo {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: start;
+}
+
+.nossa-equipe h2,
+.nossa-equipe p {
+  grid-column: 1/-1;
+}
+
+.nossa-equipe h2 {
+  margin-bottom: 20px;
+}
+
+.nossa-equipe h2::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 8px;
+  background-color: var(--cor-p5);
+  margin-bottom: 8px;
+}
+
+.nossa-equipe p {
+  margin-bottom: 32px;
+}
+
+.nossa-equipe a {
+  place-self: end;
+}
+
+.nossa-equipe li {
+  display: flex;
+  align-items: center;
+}
+
+.nossa-equipe ul {
+  display: grid;
+  gap: 16px;
+}
+
+.nossa-equipe-conteudo ul img {
+  width: 24px;
+  margin-right: 1rem;
+}
+
+#nossa-equipe-conteudo-titulo {
+  display: flex;
+  justify-content: space-between;
+}
+#nossa-equipe-conteudo-titulo div {
+  display: flex;
+  gap: 1rem;
+  place-self: center;
+}
+
+.hamburger.open #tes1 {
+  background-color: var(--background);
+  transform: rotate(45deg) translate(6px, 5px);
+}
+
+.hamburger.open #tes2 {
+  background-color: transparent;
+  display: none;
+}
+
+.hamburger.open #tes3 {
+  background-color: var(--background);
+
+  transform: rotate(-45deg) translate(6px, -5px);
+}
+@media (max-width: 800px) {
+  .socio-bg {
+    background: var(--azul-escuro);
+  }
+  .socio-bg::after {
+    display: none;
+  }
+  .nossa-equipe {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nossa-equipe-conteudo {
+    grid-template-columns: 1fr;
+  }
+  .nossa-equipe ul {
+    font-size: 1rem;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 32px;
+  }
+  .nossa-equipe a {
+    place-self: start;
+  }
+}
+
+@media (max-width: 800px) {
+
+  .titulo p {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 340px) {
+  .nossa-equipe-conteudo ul {
+    grid-template-columns: 1fr;
+  }
+}
