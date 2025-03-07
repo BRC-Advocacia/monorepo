@@ -1,6 +1,7 @@
 import { Controller, Post, Body, Get, Param } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { User } from './user.entity';
+import * as bcrypt from 'bcrypt';
 
 @Controller('users')
 export class UsersController {
@@ -8,7 +9,9 @@ export class UsersController {
 
   @Post('register') // /users/register
   async register(@Body() user: Partial<User>): Promise<User> {
-    return await this.usersService.create(user);
+
+    const hashPassword = await bcrypt.hash(user.password, 10);
+    return await this.usersService.create({ ...user, password: hashPassword });
   }
 
   @Get(':username') // /users/:username (unique)
