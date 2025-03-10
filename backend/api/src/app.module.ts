@@ -18,7 +18,7 @@ import { Article } from './articles/article.entity';
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
       entities: [Article, User],
-      synchronize: true, // Cuidado: usar anas em desenvolvimento
+      synchronize: false, //usar true apenas em ambiente dev
     }),
     UsersModule,
     ArticlesModule,

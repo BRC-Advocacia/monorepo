@@ -15,7 +15,10 @@ export class UsersService {
     const newUser = this.usersRepository.create(user);
     const hashPassword = await bcrypt.hash(user.password, 10);
 
-    return await this.usersRepository.save({ ...newUser, password: hashPassword});
+    return await this.usersRepository.save({
+      ...newUser,
+      password: hashPassword,
+    });
   }
 
   async findOne(username: string): Promise<User | undefined> {

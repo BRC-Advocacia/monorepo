@@ -1,4 +1,8 @@
 
 Todo:
-  - Solucionar problema nas rotas do módulo Articles
-  - Autenticação
+
+Current tasks:
+  - Utilizar o DB da hospedagem
+
+Futures adds:
+    - Tests na API
