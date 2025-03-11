@@ -26,6 +26,7 @@ export default function ArticleForm({ article }: ArticleFormProps) {
   const onSubmit: SubmitHandler<ArticleInputs> = async (data) => {
     try {
       const token = localStorage.getItem('access_token');
+      console.log("artigo", article)
       if (article) {
         // Editar artigo existente
         await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/articles/${article.id}`, data, {
