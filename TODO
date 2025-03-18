@@ -2,7 +2,10 @@
 Todo:
 
 Current tasks:
+  - Verificar sistema de autenticação e controle de rotas
   - Criar admin panel
+  - criar secretkey no dotenv
+  - atualizar o link do excalidraw no readme
 
 Futures adds:
     - Tests

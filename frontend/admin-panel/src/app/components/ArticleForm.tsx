@@ -43,7 +43,13 @@ export default function ArticleForm({ article }: ArticleFormProps) {
         });
       }
       router.push('/dashboard'); // Redireciona para o dashboard após a submissão
-    } catch {
+    } catch (err) {
+        if (axios.isAxiosError(err) && err.response && err.response.status === 401) {
+            console.log("caiu Aq")
+          router.push('/login');
+        } else {
+          console.error("Erro ao carregar os artigos no painel administrativo ", err);
+        }
       setError('Ocorreu um erro ao salvar o artigo.');
     }
   };

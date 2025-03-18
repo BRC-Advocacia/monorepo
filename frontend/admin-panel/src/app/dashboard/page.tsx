@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import { FaEdit, FaTrash } from 'react-icons/fa'; // Ícones de editar e deletar
+import { FaEdit, FaTrash } from 'react-icons/fa';
 import Link from 'next/link';
 import ProtectedRoute from '../components/ProtectedRoute';
 
@@ -21,14 +21,24 @@ export default function DashboardPage() {
     const fetchArticles = async () => {
       try {
         const token = localStorage.getItem('access_token');
+        if (!token) {
+          router.push('/login');
+          return;
+        }
+
         const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/articles`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
         setArticles(response.data);
-      } catch {
-        router.push('/login'); // Redireciona para o login se o token for inválido
+      } catch (error) {
+        if (axios.isAxiosError(error) && error.response && error.response.status === 401) {
+            console.log("caiu")
+          router.push('/login');
+        } else {
+          console.error("Erro ao carregar os artigos no painel administrativo ", error);
+        }
       }
     };
     fetchArticles();
@@ -37,6 +47,7 @@ export default function DashboardPage() {
   const handleDelete = async (id: number) => {
     try {
       const token = localStorage.getItem('access_token');
+      console.log("tokennnn", token)
       await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/articles/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -47,7 +58,6 @@ export default function DashboardPage() {
       console.error('Erro ao deletar o artigo:', err);
     }
   };
-
   return (
     <ProtectedRoute>
     <div className="min-h-screen bg-gray-100 p-8">

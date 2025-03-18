@@ -11,7 +11,7 @@ import { AuthController } from './auth.controller';
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.register({
       secret: 'test', // Substitua por uma chave secreta forte
-      signOptions: { expiresIn: '1h' }, // Token expira em 1 hora
+      signOptions: { expiresIn: 5 }, // Token expira em 1 hora
     }),
     UsersModule,
   ],
