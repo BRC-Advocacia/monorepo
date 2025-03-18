@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import { Console } from 'node:console';
 
 type ArticleInputs = {
   title: string;
@@ -26,7 +27,6 @@ export default function ArticleForm({ article }: ArticleFormProps) {
   const onSubmit: SubmitHandler<ArticleInputs> = async (data) => {
     try {
       const token = localStorage.getItem('access_token');
-      console.log("artigo", article)
       if (article) {
         // Editar artigo existente
         await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/articles/${article.id}`, data, {
@@ -45,7 +45,6 @@ export default function ArticleForm({ article }: ArticleFormProps) {
       router.push('/dashboard'); // Redireciona para o dashboard após a submissão
     } catch (err) {
         if (axios.isAxiosError(err) && err.response && err.response.status === 401) {
-            console.log("caiu Aq")
           router.push('/login');
         } else {
           console.error("Erro ao carregar os artigos no painel administrativo ", err);

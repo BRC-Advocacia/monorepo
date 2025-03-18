@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import jwtDecode from 'jwt-decode';
+import { isTokenValid } from '@/utils/auth';
 
 export default function ProtectedRoute({ children }: { children: React.ReactNode }) {
     const router = useRouter();
@@ -14,17 +14,12 @@ export default function ProtectedRoute({ children }: { children: React.ReactNode
             return;
         }
 
-        try {
-            const decodedToken: { exp: number } = jwtDecode(token);
-            const isExpired = decodedToken.exp * 1000 < Date.now(); // Convert `exp` to milliseconds
-            if (isExpired) {
-                localStorage.removeItem('access-token');
-                router.push('/login');
-            }
-        } catch (error) {
-            console.error('Invalid token:', error);
+        if (!isTokenValid()) {
+            localStorage.removeItem('access_token');
+            localStorage.removeItem('token_timestamp');
             router.push('/login');
-        }
+          }
+
     }, [router]);
 
     return <>{children}</>;

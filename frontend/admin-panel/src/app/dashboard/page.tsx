@@ -32,13 +32,8 @@ export default function DashboardPage() {
           },
         });
         setArticles(response.data);
-      } catch (error) {
-        if (axios.isAxiosError(error) && error.response && error.response.status === 401) {
-            console.log("caiu")
+      } catch {
           router.push('/login');
-        } else {
-          console.error("Erro ao carregar os artigos no painel administrativo ", error);
-        }
       }
     };
     fetchArticles();
@@ -47,7 +42,6 @@ export default function DashboardPage() {
   const handleDelete = async (id: number) => {
     try {
       const token = localStorage.getItem('access_token');
-      console.log("tokennnn", token)
       await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/articles/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,

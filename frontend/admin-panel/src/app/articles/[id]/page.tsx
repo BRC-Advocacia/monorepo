@@ -28,7 +28,6 @@ export default function EditArticlePage() {
         setArticle(response.data);
       } catch(error) {
         if (axios.isAxiosError(error) && error.response && error.response.status === 401) {
-            console.log("caiu Aq")
           router.push('/login');
         } else {
           console.error("Erro ao carregar os artigos no painel administrativo ", error);
@@ -39,8 +38,11 @@ export default function EditArticlePage() {
   }, [router, params.id]);
 
   if (!article) {
-    return <div className="min-h-screen bg-gray-100 p-8">Carregando...</div>;
-  }
+    return (
+    <ProtectedRoute>
+        <div className="min-h-screen bg-gray-100 p-8">Carregando...</div>
+    </ProtectedRoute>
+ )}
 
   return (
     <ProtectedRoute>

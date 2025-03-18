@@ -18,7 +18,10 @@ export default function LoginPage() {
         password,
       });
 
+      const timestamp = Date.now();
+
       localStorage.setItem('access_token', response.data.access_token);
+      localStorage.setItem('token_timestamp', timestamp.toString());
       router.push('/dashboard');
     } catch{
       setError('Credenciais inválidas.');
