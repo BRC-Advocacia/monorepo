@@ -1,7 +1,7 @@
 # BRC Documentation
 
 ### Project Design Structure
-- [Excalidraw](https://excalidraw.com/#json=fHKMtX7xpIP41GFDXU6gq,5ezONG0o-j22mfDseuAYJA)
+- [Excalidraw](https://excalidraw.com/#json=tu-GrEhYT_HPOV16G2ls4,wCQap2AyYbLCYRfLWAzA5w)
 
 ### Database Structure
 

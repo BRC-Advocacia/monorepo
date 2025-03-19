@@ -10,7 +10,7 @@ import { AuthController } from './auth.controller';
   imports: [
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.register({
-      secret: '${process.env.SECRET_KEY}',
+      secret: ('${process.env.SECRET_KEY}'),
       signOptions: { expiresIn: 3600 },
     }),
     UsersModule,
