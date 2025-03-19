@@ -5,6 +5,8 @@ Current tasks:
   - criar secretkey no dotenv
   - atualizar o link do excalidraw no readme
   - add field de Nome Completo e cargo no endpoint de signup
+
 Futures adds:
     - Tests
-    - Blog
+    - Blog UI
+    - Container docker
