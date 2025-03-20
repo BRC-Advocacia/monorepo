@@ -1,64 +1,36 @@
-'use client';
-
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import axios from 'axios';
+import LoginForm from "@/app/components/LoginForm";
+import styles from "./page.module.css";
+import Image from "next/image";
 
 export default function LoginPage() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const router = useRouter();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
-        username,
-        password,
-      });
-
-      const timestamp = Date.now();
-
-      localStorage.setItem('access_token', response.data.access_token);
-      localStorage.setItem('token_timestamp', timestamp.toString());
-      router.push('/dashboard');
-    } catch{
-      setError('Credenciais inválidas.');
-    }
-  };
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded shadow-md w-96">
-        <h1 className="text-2xl font-bold mb-6">Login</h1>
-        {error && <p className="text-red-500 mb-4">{error}</p>}
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label className="block text-sm font-medium mb-2">Usuário</label>
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className="w-full p-2 border rounded"
-              required
-            />
-          </div>
-          <div className="mb-6">
-            <label className="block text-sm font-medium mb-2">Senha</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-2 border rounded"
-              required
-            />
-          </div>
-          <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">
-            Entrar
-          </button>
-        </form>
+    <main className="min-h-dvh grid grid-cols-2 gap-8 items-center justify-center bg-[#000]">
+      <div className="flex w-full h-full">
+        <Image
+          className="w-full h-auto object-cover object-center"
+          src={"/socios/socios01.jpg"}
+          alt="Foto dos sócios - BRC Advogados"
+          width={1200}
+          height={1200}
+        />
       </div>
-    </div>
+      <div className="p-8 rounded shadow-md w-[80%] border-blue flex flex-col justify-between">
+        <Image
+          className="object-cover object-center"
+          src={"/logos/logo-azul.svg"}
+          alt="Foto dos sócios - BRC Advogados"
+          width={124}
+          height={124}
+        />
+        <div>
+          <h1
+            className={`text-6xl font-bold mb-6 text-gray-100 relative max-w-fit z-999 ${styles.h1}`}
+          >
+            Login
+          </h1>
+          <LoginForm />
+        </div>
+      </div>
+    </main>
   );
 }
