@@ -33,35 +33,46 @@ const LoginForm = () => {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col w-[80%] relative">
       <div className="mb-4">
-        <label className="block text-sm font-medium mb-2 text-gray-200">
+        <label
+          className="block text-sm font-medium mb-2 text-gray-200"
+          htmlFor="username"
+        >
           Usuário
         </label>
         <input
+          id="username"
+          name="username"
           type="text"
           placeholder="Nome de usuário"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="bg-slate-950 w-full text-white p-2 border rounded border-gray-500 focus:outline-none focus:bg-slate-800 hover:border-indigo-800"
+          autoComplete="off"
+          className="bg-transparent w-full text-white p-2 border rounded border-gray-500 focus:outline-none focus:bg-black focus:border-[#B3961D] hover:border-[#B3961D]"
           required
         />
       </div>
       <div className="mb-6">
-        <label className="block text-sm font-medium mb-2 text-gray-200">
+        <label
+          className="block text-sm font-medium mb-2 text-gray-200"
+          htmlFor="password"
+        >
           Senha
         </label>
         <input
+          id="password"
+          name="password"
           type="password"
           placeholder="Senha do usuário"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="bg-slate-950 w-full text-white p-2 border rounded border-gray-500 focus:outline-none focus:bg-slate-800  hover:border-indigo-800"
+          className="bg-transparent w-full text-white p-2 border rounded border-gray-500 focus:outline-none focus:bg-black  focus:border-[#B3961D] hover:border-[#B3961D]"
           required
         />
       </div>
-      {error && <p className="text-red-500 mb-4 text-gray-400">{error}</p>}
+      {(error || !error) && <p className="text-red-500 mb-4">{error}</p>}
       <button
         type="submit"
-        className="bg-black border border-gray-500 text-slate-200 p-2 rounded w-[40%] cursor-pointer hover:bg-black hover:text-slate-200 hover:border-indigo-800 transition duration-200"
+        className="bg-transparent border border-gray-500 text-slate-200 p-2 rounded w-[40%] cursor-pointer hover:bg-black hover:text-slate-200 hover:border-[#B3961D]"
       >
         Entrar
       </button>

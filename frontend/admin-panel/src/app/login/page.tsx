@@ -28,7 +28,7 @@ export default function LoginPage() {
           />
           <div>
             <h1
-              className={`text-6xl font-bold mb-6 text-gray-100 relative max-w-fit z-999 ${styles.h1}`}
+              className={`text-6xl font-bold mb-6 text-[#B3961D] relative max-w-fit z-999 font-[Boldonse] ${styles.h1}`}
             >
               Login
             </h1>
