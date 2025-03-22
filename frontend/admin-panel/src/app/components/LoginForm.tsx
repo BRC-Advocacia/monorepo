@@ -31,7 +31,7 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col w-[80%] relative">
+    <form onSubmit={handleSubmit} className="flex flex-col w-full relative">
       <div className="mb-4">
         <label
           className="block text-sm font-medium mb-2 text-gray-200"
@@ -72,7 +72,7 @@ const LoginForm = () => {
       {(error || !error) && <p className="text-red-500 mb-4">{error}</p>}
       <button
         type="submit"
-        className="bg-transparent border border-gray-500 text-slate-200 p-2 rounded w-[40%] cursor-pointer hover:bg-black hover:text-slate-200 hover:border-[#B3961D]"
+        className="bg-transparent border border-gray-500 text-slate-200 p-2 rounded w-[50%] cursor-pointer hover:bg-black hover:text-slate-200 hover:border-[#B3961D] "
       >
         Entrar
       </button>
