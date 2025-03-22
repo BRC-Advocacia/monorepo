@@ -2,11 +2,13 @@
 Todo:
 
 Current tasks:
-  - criar secretkey no dotenv
-  - atualizar o link do excalidraw no readme
-  - add field de Nome Completo e cargo no endpoint de signup
+  - enrich fields such as Nome Completo and lawer position no endpoint de signup to use these informations on blog
+  - Improve dashboard UI
+  - Create an explained readme for both areas (front-end and back-end)
+  - Improve ProtectedRoute component
 
 Futures adds:
     - Tests
     - Blog UI
-    - Container docker
+    - Header Component for blog
+    - Docker
