@@ -2,7 +2,7 @@
 Todo:
 
 Current tasks:
-  - enrich fields such as Nome Completo and lawer position no endpoint de signup to use these informations on blog
+  - enrich fields such as Nome Completo and lawer position no service de signup to use these informations on blog
   - Improve dashboard UI
   - Create an explained readme for both areas (front-end and back-end)
   - Improve ProtectedRoute component

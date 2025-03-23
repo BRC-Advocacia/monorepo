@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { isTokenValid } from '@/utils/auth';
 
@@ -22,5 +22,8 @@ export default function ProtectedRoute({ children }: { children: React.ReactNode
 
     }, [router]);
 
-    return <>{children}</>;
+    return (
+     <>
+    {children}
+    </>);
 }
