@@ -1,6 +1,5 @@
 "use client";
 import LoginForm from "@/app/components/LoginForm";
-import styles from "./page.module.css";
 import Image from "next/image";
 import { AuroraBackground } from "../components/AuroraBackground";
 import { motion } from "motion/react";
@@ -30,7 +29,7 @@ export default function LoginPage() {
           />
           <div className="flex flex-col items-center lg:block">
             <h1
-              className={`self-start text-6xl font-bold my-8 text-[#B3961D] relative max-w-fit z-999 ${styles.h1}`}
+              className={`self-start text-6xl font-bold my-8 text-[#B3961D] relative max-w-fit z-999 after:content-[''] after:block after:mt-2 after:bg-[oklch(0.398_0.195_277.366)] after:w-7 after:h-7 after:rounded after:absolute after:bottom-0 after:-left-2 after:-z-[1]`}
             >
               Login
             </h1>
