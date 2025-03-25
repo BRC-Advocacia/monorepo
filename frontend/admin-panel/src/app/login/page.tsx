@@ -8,9 +8,10 @@ import { motion } from "motion/react";
 export default function LoginPage() {
   return (
     <AuroraBackground>
-      <motion.main className="min-h-dvh w-screen flex flex-col lg:grid lg:grid-rows-1 lg:grid-cols-2 gap-8 items-center justify-center bg-[#000]">
+      <motion.main className="bg-gray-950 min-h-dvh w-screen flex flex-col lg:grid lg:grid-rows-1 lg:grid-cols-2 gap-8 items-center justify-center bg-[#000">
         <div className="hidden lg:flex w-full h-full">
           <Image
+            priority
             className="w-full h-auto object-cover object-center relative z-159"
             src={"/socios/socios01.jpg"}
             alt="Foto dos sócios - BRC Advogados"
@@ -20,7 +21,8 @@ export default function LoginPage() {
         </div>
         <div className="p-8 rounded w-full sm:w-[80%] border-blue flex flex-col justify-between">
           <Image
-            className="object-cover object-center h-auto mx-auto mb- lg:mx-0"
+            priority
+            className="h-[30%] w-[30%] mx-auto lg:mx-0"
             src={"/logos/logo-azul.svg"}
             alt="Logo - BRC Advogados"
             width={124}
