@@ -1,93 +1,29 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useRouter } from 'next/navigation';
-import { FaEdit, FaTrash } from 'react-icons/fa';
-import Link from 'next/link';
-import ProtectedRoute from '../components/ProtectedRoute';
+import Link from "next/link";
+import styles from "./page.module.css";
+import ProtectedRoute from "../components/ProtectedRoute";
+import ArticlesDashboard from "../components/ArticlesDashboard";
+import { Plus } from "lucide-react";
 
 export default function DashboardPage() {
-  interface Article {
-    id: number;
-    title: string;
-    content: string;
-  }
-
-  const [articles, setArticles] = useState<Article[]>([]);
-  const router = useRouter();
-
-  useEffect(() => {
-    const fetchArticles = async () => {
-      try {
-        const token = localStorage.getItem('access_token');
-        if (!token) {
-          router.push('/login');
-          return;
-        }
-
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/articles`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        setArticles(response.data);
-      } catch {
-          router.push('/login');
-      }
-    };
-    fetchArticles();
-  }, [router]);
-
-  const handleDelete = async (id: number) => {
-    try {
-      const token = localStorage.getItem('access_token');
-      await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/articles/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      setArticles(articles.filter((article) => article.id !== id)); // Remove o artigo da lista
-    } catch (err) {
-      console.error('Erro ao deletar o artigo:', err);
-    }
-  };
   return (
     <ProtectedRoute>
-    <div className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-2xl font-bold mb-6">Dashboard</h1>
-      <Link
-        href="/articles/new"
-        className="bg-blue-500 text-white p-2 rounded mb-6 inline-block"
-      >
-        Criar Novo Artigo
-      </Link>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {articles.map((article) => (
-          <div
-            key={article.id}
-            className="bg-white p-6 rounded shadow-md relative hover:shadow-lg transition-shadow group"
+      <div className="min-h-screen bg-gray-950 p-8">
+        <div className="flex flex-col items-start g-6 sm:flex-row sm:justify-between sm:items-center mb-6">
+          <h1
+            className={`mb-6 sm:mb-0 text-gray-200 text-4xl font-bold flex justify-between relative ${styles.dashboardH1} z-99 text-wrap`}
           >
-            <div className="absolute top-2 right-2 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
-              <Link
-                href={`/articles/${article.id}`}
-                className="text-blue-500 hover:text-blue-700"
-              >
-                <FaEdit size={20} />
-              </Link>
-              <button
-                onClick={() => handleDelete(article.id)}
-                className="text-red-500 hover:text-red-700"
-              >
-                <FaTrash size={20} />
-              </button>
-            </div>
-            <h2 className="text-xl font-bold mb-2">{article.title}</h2>
-            <p className="text-gray-700">{article.content}</p>
-          </div>
-        ))}
-      </div>
+            Dashboard Articles
+          </h1>
+          <Link
+            href="/articles/new"
+            className="bg-transparent text-white p-2 rounded border border-gray-800"
+          >
+            <Plus width={24} height={24} />
+          </Link>
         </div>
+
+        <ArticlesDashboard />
+      </div>
     </ProtectedRoute>
   );
 }
