@@ -12,7 +12,11 @@ export class ArticlesService {
   ) {}
 
   async create(article: Partial<Article>, author: User): Promise<Article> {
-    const newArticle = this.articlesRepository.create({ ...article, author });
+    const newArticle = this.articlesRepository.create({
+    ...article,
+    author,
+    content: article.content
+});
     return await this.articlesRepository.save(newArticle);
   }
 

@@ -25,3 +25,8 @@ export class Article {
   })
   updated_at: Date;
 }
+
+export class CreateArticleDto {
+    title: string;
+    content: string;
+  }
