@@ -1,6 +1,23 @@
-'use client';
+"use client";
 
-import { Editor } from '@tiptap/react';
+import { Editor } from "@tiptap/react";
+import {
+  Bold,
+  Italic,
+  Heading1,
+  Heading2,
+  Heading3,
+  Image as ImageIcon,
+  Link as LinkIcon,
+  List,
+  ListOrdered,
+  Quote,
+  AlignLeft,
+  AlignCenter,
+  AlignRight,
+  CheckSquare,
+  Highlighter,
+} from "lucide-react";
 
 interface EditorToolbarProps {
   editor: Editor | null;
@@ -9,60 +26,231 @@ interface EditorToolbarProps {
 export default function EditorToolbar({ editor }: EditorToolbarProps) {
   if (!editor) return null;
 
+  const addLink = () => {
+    const url = window.prompt("Digite a URL do link:");
+    if (url) {
+      editor.chain().focus().setLink({ href: url }).run();
+    }
+  };
+
   return (
     <div className="flex flex-wrap gap-2 p-2 border-b bg-gray-50 rounded-t-lg">
-      <button
-        type="button"
-        onClick={() => editor.chain().focus().toggleBold().run()}
-        className={`p-2 ${editor.isActive('bold') ? 'bg-blue-100' : 'hover:bg-gray-200'}`}
-      >
-        Negrito
-      </button>
-      <button
-        type="button"
-        onClick={() => editor.chain().focus().toggleItalic().run()}
-        className={`p-2 ${editor.isActive('italic') ? 'bg-blue-100' : 'hover:bg-gray-200'}`}
-      >
-        Itálico
-      </button>
+      <div className="flex items-center gap-1 border-r pr-2">
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().toggleBold().run()}
+          className={`p-2 rounded ${
+            editor.isActive("bold")
+              ? "bg-blue-100 text-blue-600"
+              : "hover:bg-gray-200"
+          }`}
+          title="Negrito"
+        >
+          <Bold className="w-4 h-4" />
+        </button>
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().toggleItalic().run()}
+          className={`p-2 rounded ${
+            editor.isActive("italic")
+              ? "bg-blue-100 text-blue-600"
+              : "hover:bg-gray-200"
+          }`}
+          title="Itálico"
+        >
+          <Italic className="w-4 h-4" />
+        </button>
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().toggleHighlight().run()}
+          className={`p-2 rounded ${
+            editor.isActive("highlight")
+              ? "bg-blue-100 text-blue-600"
+              : "hover:bg-gray-200"
+          }`}
+          title="Destacar"
+        >
+          <Highlighter className="w-4 h-4" />
+        </button>
+      </div>
 
-      <select
-        onChange={(e) => {
-          e.stopPropagation(); // (https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation)
-          editor.chain().focus().toggleHeading({ level: parseInt(e.target.value) as any }).run();
-        }}
-        className="p-2"
-      >
-        <option value="">Título</option>
-        <option value="1">Título 1</option>
-        <option value="2">Título 2</option>
-        <option value="3">Título 3</option>
-      </select>
-
-      <input
-        type="file"
-        accept="image/*"
-        onChange={(e) => {
-          e.stopPropagation();
-          const file = e.target.files?.[0];
-          if (file) {
-            const reader = new FileReader();
-            reader.onload = () => {
-              editor.chain().focus().setImage({ src: reader.result as string }).run();
-            };
-            reader.readAsDataURL(file);
+      <div className="flex items-center gap-1 border-r pr-2">
+        <button
+          type="button"
+          onClick={() =>
+            editor.chain().focus().toggleHeading({ level: 1 }).run()
           }
-        }}
-        className="hidden"
-        id="image-upload"
-      />
-      <label
-        htmlFor="image-upload"
-        className="p-2 hover:bg-gray-200 cursor-pointer"
-        onClick={(e) => e.stopPropagation()}
-      >
-        Inserir Imagem
-      </label>
+          className={`p-2 rounded ${
+            editor.isActive("heading", { level: 1 })
+              ? "bg-blue-100 text-blue-600"
+              : "hover:bg-gray-200"
+          }`}
+          title="Título 1"
+        >
+          <Heading1 className="w-4 h-4" />
+        </button>
+        <button
+          type="button"
+          onClick={() =>
+            editor.chain().focus().toggleHeading({ level: 2 }).run()
+          }
+          className={`p-2 rounded ${
+            editor.isActive("heading", { level: 2 })
+              ? "bg-blue-100 text-blue-600"
+              : "hover:bg-gray-200"
+          }`}
+          title="Título 2"
+        >
+          <Heading2 className="w-4 h-4" />
+        </button>
+        <button
+          type="button"
+          onClick={() =>
+            editor.chain().focus().toggleHeading({ level: 3 }).run()
+          }
+          className={`p-2 rounded ${
+            editor.isActive("heading", { level: 3 })
+              ? "bg-blue-100 text-blue-600"
+              : "hover:bg-gray-200"
+          }`}
+          title="Título 3"
+        >
+          <Heading3 className="w-4 h-4" />
+        </button>
+      </div>
+
+      <div className="flex items-center gap-1 border-r pr-2">
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().toggleBulletList().run()}
+          className={`p-2 rounded ${
+            editor.isActive("bulletList")
+              ? "bg-blue-100 text-blue-600"
+              : "hover:bg-gray-200"
+          }`}
+          title="Lista com marcadores"
+        >
+          <List className="w-4 h-4" />
+        </button>
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().toggleOrderedList().run()}
+          className={`p-2 rounded ${
+            editor.isActive("orderedList")
+              ? "bg-blue-100 text-blue-600"
+              : "hover:bg-gray-200"
+          }`}
+          title="Lista numerada"
+        >
+          <ListOrdered className="w-4 h-4" />
+        </button>
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().toggleTaskList().run()}
+          className={`p-2 rounded ${
+            editor.isActive("taskList")
+              ? "bg-blue-100 text-blue-600"
+              : "hover:bg-gray-200"
+          }`}
+          title="Lista de tarefas"
+        >
+          <CheckSquare className="w-4 h-4" />
+        </button>
+      </div>
+
+      <div className="flex items-center gap-1 border-r pr-2">
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().setTextAlign("left").run()}
+          className={`p-2 rounded ${
+            editor.isActive({ textAlign: "left" })
+              ? "bg-blue-100 text-blue-600"
+              : "hover:bg-gray-200"
+          }`}
+          title="Alinhar à esquerda"
+        >
+          <AlignLeft className="w-4 h-4" />
+        </button>
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().setTextAlign("center").run()}
+          className={`p-2 rounded ${
+            editor.isActive({ textAlign: "center" })
+              ? "bg-blue-100 text-blue-600"
+              : "hover:bg-gray-200"
+          }`}
+          title="Centralizar"
+        >
+          <AlignCenter className="w-4 h-4" />
+        </button>
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().setTextAlign("right").run()}
+          className={`p-2 rounded ${
+            editor.isActive({ textAlign: "right" })
+              ? "bg-blue-100 text-blue-600"
+              : "hover:bg-gray-200"
+          }`}
+          title="Alinhar à direita"
+        >
+          <AlignRight className="w-4 h-4" />
+        </button>
+      </div>
+
+      <div className="flex items-center gap-1">
+        <button
+          type="button"
+          onClick={() => editor.chain().focus().toggleBlockquote().run()}
+          className={`p-2 rounded ${
+            editor.isActive("blockquote")
+              ? "bg-blue-100 text-blue-600"
+              : "hover:bg-gray-200"
+          }`}
+          title="Citação"
+        >
+          <Quote className="w-4 h-4" />
+        </button>
+        <button
+          type="button"
+          onClick={addLink}
+          className={`p-2 rounded ${
+            editor.isActive("link")
+              ? "bg-blue-100 text-blue-600"
+              : "hover:bg-gray-200"
+          }`}
+          title="Adicionar link"
+        >
+          <LinkIcon className="w-4 h-4" />
+        </button>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={(e) => {
+            e.stopPropagation();
+            const file = e.target.files?.[0];
+            if (file) {
+              const reader = new FileReader();
+              reader.onload = () => {
+                editor
+                  .chain()
+                  .focus()
+                  .setImage({ src: reader.result as string })
+                  .run();
+              };
+              reader.readAsDataURL(file);
+            }
+          }}
+          className="hidden"
+          id="image-upload"
+        />
+        <label
+          htmlFor="image-upload"
+          className="p-2 rounded hover:bg-gray-200 cursor-pointer"
+          title="Inserir imagem"
+        >
+          <ImageIcon className="w-4 h-4" />
+        </label>
+      </div>
     </div>
   );
 }
