@@ -2,13 +2,11 @@
 Todo:
 
 Current tasks:
-  - enrich fields such as Nome Completo and lawer position no endpoint de signup to use these informations on blog
-  - Improve dashboard UI
+  - Organize components folder
+  - enrich user entity dto (full name, oab number, cargo)
   - Create an explained readme for both areas (front-end and back-end)
-  - Improve ProtectedRoute component
-
+  -
 Futures adds:
     - Tests
     - Blog UI
-    - Header Component for blog
     - Docker

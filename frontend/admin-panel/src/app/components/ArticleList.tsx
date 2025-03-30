@@ -2,7 +2,13 @@ import { useEffect, useState } from 'react';
 import api from '../services/api';
 
 export default function ArticleList() {
-  const [articles, setArticles] = useState([]);
+  interface Article {
+    id: number;
+    title: string;
+    content: string;
+  }
+
+  const [articles, setArticles] = useState<Article[]>([]);
 
   useEffect(() => {
     const fetchArticles = async () => {
