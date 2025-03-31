@@ -9,7 +9,6 @@ import { ArticleCard } from "./ArticleCard";
 export interface Article {
   id: number;
   title: string;
-  content: string;
 }
 
 const ArticlesDashboard = () => {
@@ -49,7 +48,6 @@ const ArticlesDashboard = () => {
           key={article.id}
           id={article.id}
           title={article.title}
-          content={article.content}
           setArticles={setArticles}
         />
       ))}

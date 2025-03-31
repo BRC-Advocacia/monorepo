@@ -22,7 +22,7 @@ export function ArticleCard({
 }: {
   id: number;
   title: string;
-  content: string;
+  content?: string;
   setArticles: React.Dispatch<React.SetStateAction<Article[]>>;
   router: AppRouterInstance;
 }) {
