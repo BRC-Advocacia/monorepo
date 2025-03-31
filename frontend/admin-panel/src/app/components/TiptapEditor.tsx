@@ -17,10 +17,10 @@ import EditorToolbar from "./EditorToolbar";
 
 interface TiptapEditorProps {
   content?: string;
-  onUpdateAction: (content: string) => void;
+  onUpdate: (content: string) => void;
 }
 
-export default function TiptapEditor({ content, onUpdateAction }: TiptapEditorProps) {
+export default function TiptapEditor({ content, onUpdate }: TiptapEditorProps) {
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
@@ -79,7 +79,7 @@ export default function TiptapEditor({ content, onUpdateAction }: TiptapEditorPr
     ],
     content: content || "<p>Comece a escrever seu artigo...</p>",
     onUpdate: ({ editor }) => {
-      onUpdateAction(editor.getHTML());
+      onUpdate(editor.getHTML());
     },
     editorProps: {
       attributes: {
