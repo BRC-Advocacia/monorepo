@@ -1,3 +1,10 @@
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+
 export const isTokenValid = (): boolean => {
     const token = localStorage.getItem('access_token');
     const tokenTimestamp = localStorage.getItem('token_timestamp');
@@ -11,5 +18,5 @@ export const isTokenValid = (): boolean => {
 
     const tokenExpirationTime = 60 * 60 * 1000;
 
-    return tokenAge < tokenExpirationTime; 
+    return tokenAge < tokenExpirationTime;
   };
