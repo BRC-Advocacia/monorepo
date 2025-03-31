@@ -22,7 +22,16 @@ import {
 interface EditorToolbarProps {
   editor: Editor | null;
 }
-
+// NOTE:
+// O processo atual é:
+// A imagem é convertida para base64 usando FileReader
+// O base64 é inserido diretamente no conteúdo do editor
+// A imagem é salva junto com o conteúdo do artigo no banco de dados
+// Isso tem algumas desvantagens:
+// O base64 aumenta significativamente o tamanho do conteúdo
+// Não há otimização de imagens
+// As imagens não são reutilizáveis
+// O banco de dados fica mais pesado
 export default function EditorToolbar({ editor }: EditorToolbarProps) {
   if (!editor) return null;
 

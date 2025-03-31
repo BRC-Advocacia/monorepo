@@ -11,3 +11,4 @@ Futures adds:
     - Blog UI
     - Docker
     - Create an explained readme for both areas (front-end and back-end)
+    - Use AWS S3 to storage articles images
