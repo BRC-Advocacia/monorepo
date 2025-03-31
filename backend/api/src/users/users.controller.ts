@@ -6,20 +6,19 @@ import { User } from './user.entity';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  @Post('register') // /users/register
+  @Post('register')
   async register(@Body() user: Partial<User>): Promise<User> {
-
     return await this.usersService.create(user);
   }
 
-  @Get(':username') // /users/:username (unique)
+  @Get(':username')
   async findOne(
     @Param('username') username: string,
   ): Promise<User> {
     return await this.usersService.findOne(username);
   }
 
-  @Get() // /users
+  @Get()
   async findAll(): Promise<User[]> {
     return await this.usersService.findAll();
   }

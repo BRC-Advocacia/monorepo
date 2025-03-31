@@ -12,6 +12,15 @@ export class User {
   @Column()
   password: string;
 
+  @Column()
+  fullname: string;
+
+  @Column()
+  oabnumber: string;
+
+  @Column()
+  entitlement: string;
+
   @OneToMany(() => Article, (article) => article.author)
   articles: Article[];
 }
