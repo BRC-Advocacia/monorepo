@@ -3,8 +3,9 @@ Todo:
 
 Current tasks:
   - Organize components folder
+  - Improve ArticleForm component UI (Centralized, etc)
+  - ArticleList and ArticleDashboard components can stay on the same file
   - Improve rich text editor to allow gif format
-  - enrich user entity dto (full name, oab number, cargo)
   -
 Futures adds:
     - Tests

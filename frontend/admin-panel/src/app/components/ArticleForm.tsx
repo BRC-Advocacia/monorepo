@@ -28,6 +28,7 @@ export default function ArticleForm({ article }: ArticleFormProps) {
 
   const handleEditorChange = (content: string) => {
     setEditorContent(content);
+    console.log(content)
     setValue('content', content);
   };
 
