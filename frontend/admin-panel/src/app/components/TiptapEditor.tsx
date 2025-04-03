@@ -1,6 +1,6 @@
 "use client";
-
 import { useEditor, EditorContent } from "@tiptap/react";
+import Placeholder from "@tiptap/extension-placeholder";
 import StarterKit from "@tiptap/starter-kit";
 import Image from "@tiptap/extension-image";
 import Table from "@tiptap/extension-table";
@@ -25,7 +25,7 @@ export default function TiptapEditor({ content, onUpdate }: TiptapEditorProps) {
     extensions: [
       StarterKit.configure({
         heading: {
-          levels: [1, 2, 3, 4, 5, 6],
+          levels: [1, 2, 3, 4],
         },
       }),
       Image.configure({
@@ -39,6 +39,9 @@ export default function TiptapEditor({ content, onUpdate }: TiptapEditorProps) {
         HTMLAttributes: {
           class: "border-collapse table-auto w-full",
         },
+      }),
+      Placeholder.configure({
+        placeholder: "Escreva '/' para abrir o menu...",
       }),
       TableRow.configure({
         HTMLAttributes: {
@@ -84,7 +87,7 @@ export default function TiptapEditor({ content, onUpdate }: TiptapEditorProps) {
     editorProps: {
       attributes: {
         class:
-          "prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto focus:outline-none",
+          "prose prose-sm prose-violet-400 sm:prose lg:prose-lg xl:prose-2xl mx-auto focus:outline-none",
       },
     },
   });
@@ -99,8 +102,8 @@ export default function TiptapEditor({ content, onUpdate }: TiptapEditorProps) {
     <div className="border rounded-lg bg-white">
       <EditorToolbar editor={editor} />
       <EditorContent
-        editor={editor}
         className="p-4 min-h-[300px] max-h-[600px] overflow-y-auto"
+        editor={editor}
       />
     </div>
   );
