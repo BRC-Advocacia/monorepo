@@ -51,7 +51,7 @@ export function ArticleCard({
           height={256}
           src="/socios/socios01.jpg"
           alt="Article cover"
-          className="w-full h-[260px] object-cover object-top shadow-md shadow-gray-800 "
+          className="w-full h-[260px] object-cover object-top shadow-md shadow-gray-800"
         />
       </div>
 
