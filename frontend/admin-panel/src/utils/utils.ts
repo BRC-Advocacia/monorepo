@@ -5,9 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const isTokenValid = (): boolean => {
-    const token = localStorage.getItem('access_token');
-    const tokenTimestamp = localStorage.getItem('token_timestamp');
+export const isTokenValid = (token: string, tokenTimestamp: string | null): boolean => {
 
     if (!token || !tokenTimestamp) {
       return false;
