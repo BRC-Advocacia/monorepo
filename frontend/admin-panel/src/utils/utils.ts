@@ -14,7 +14,7 @@ export const isTokenValid = (token: string, tokenTimestamp: string | null): bool
     const currentTime = Date.now();
     const tokenAge = currentTime - parseInt(tokenTimestamp, 10);
 
-    const tokenExpirationTime = 60 * 60 * 1000;
+    const tokenExpirationTime = 60 * 60 * 3600;
 
     return tokenAge < tokenExpirationTime;
   };
