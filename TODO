@@ -2,14 +2,17 @@
 Todo:
 
 Current tasks:
-  - Organize components folder
+  - add BRC Typography (roboto & poppins)
   - Improve ArticleForm component UI (Centralized, etc)
   - ArticleList and ArticleDashboard components can stay on the same file
-  - Improve rich text editor to allow gif format
-  -
+  - Separar Props das funções (boa prática de programação)
+  - Blog UI
+
 Futures adds:
+  - Improve rich text editor to allow gif format
     - Tests
-    - Blog UI
     - Docker
     - Create an explained readme for both areas (front-end and back-end)
     - Use AWS S3 to storage articles images
+    - Adicionar um Modelo de artigo como base para novos artigos
+    - Adicionar categorias (etiquetas de áreas do advogado)

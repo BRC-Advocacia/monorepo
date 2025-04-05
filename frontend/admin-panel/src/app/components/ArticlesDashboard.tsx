@@ -5,6 +5,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 
 import { ArticleCard } from "./ArticleCard";
+import ProtectedRoute from "./ProtectedRoute";
 
 export interface Article {
   id: number;
@@ -41,17 +42,19 @@ const ArticlesDashboard = () => {
   }, [router]);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {articles.map((article) => (
-        <ArticleCard
-          router={router}
-          key={article.id}
-          id={article.id}
-          title={article.title}
-          setArticles={setArticles}
-        />
-      ))}
-    </div>
+    <ProtectedRoute>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {articles.map((article) => (
+            <ArticleCard
+            router={router}
+            key={article.id}
+            id={article.id}
+            title={article.title}
+            setArticles={setArticles}
+            />
+        ))}
+        </div>
+    </ProtectedRoute>
   );
 };
 
