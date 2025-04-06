@@ -3,10 +3,11 @@ Todo:
 
 Current tasks:
   - add BRC Typography (roboto & poppins)
-  - Improve ArticleForm component UI (Centralized, etc)
+  - Improve ArticleForm component UI (Centralized)
   - ArticleList and ArticleDashboard components can stay on the same file
   - Separar Props das funções (boa prática de programação)
-  - Blog UI
+  - Blog UI enhancement
+  - Separar artigos por categorias
 
 Futures adds:
   - Improve rich text editor to allow gif format
