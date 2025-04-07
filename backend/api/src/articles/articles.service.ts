@@ -3,12 +3,14 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Article } from './article.entity';
 import { User } from '../users/user.entity';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class ArticlesService {
   constructor(
     @InjectRepository(Article)
     private articlesRepository: Repository<Article>,
+    private configService: ConfigService,
   ) {}
 
   async create(article: Partial<Article>, author: User): Promise<Article> {
@@ -17,19 +19,35 @@ export class ArticlesService {
   }
 
   async findAll(): Promise<Article[]> {
-    return await this.articlesRepository.find({ relations: ['author'] });
+    const articles = await this.articlesRepository.find({
+      relations: ['author'],
+    });
+    return articles.map((article) => {
+      if (article.coverImage && !article.coverImage.startsWith('http')) {
+        article.coverImage = `${this.configService.get('API_URL')}${article.coverImage}`;
+      }
+      return article;
+    });
   }
 
   async findOne(id: number): Promise<Article | undefined> {
-    return await this.articlesRepository.findOne({
+    const article = await this.articlesRepository.findOne({
       where: { id },
       relations: ['author'],
     });
+    if (
+      article &&
+      article.coverImage &&
+      !article.coverImage.startsWith('http')
+    ) {
+      article.coverImage = `${this.configService.get('API_URL')}${article.coverImage}`;
+    }
+    return article;
   }
 
   async update(id: number, article: Partial<Article>): Promise<Article> {
     await this.articlesRepository.update(id, article);
-    return await this.articlesRepository.findOne({ where: { id } });
+    return await this.findOne(id);
   }
 
   async remove(id: number): Promise<void> {

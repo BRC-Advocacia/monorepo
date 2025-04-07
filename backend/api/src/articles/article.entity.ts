@@ -12,6 +12,9 @@ export class Article {
   @Column('text')
   content: string;
 
+  @Column({ nullable: true })
+  coverImage?: string;
+
   @ManyToOne(() => User, (user) => user.articles)
   author: User;
 

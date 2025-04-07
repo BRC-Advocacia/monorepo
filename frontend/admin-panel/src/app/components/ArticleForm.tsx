@@ -5,10 +5,12 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import TiptapEditor from "./TiptapEditor";
+import ArticleCoverUpload from "./ArticleCoverUpload";
 
 type ArticleInputs = {
   title: string;
   content: string;
+  coverImage?: string;
 };
 
 interface ArticleFormProps {
@@ -16,6 +18,7 @@ interface ArticleFormProps {
     id: number;
     title: string;
     content: string;
+    coverImage?: string;
   };
 }
 
@@ -34,6 +37,11 @@ export default function ArticleForm({ article }: ArticleFormProps) {
     setEditorContent(content);
     console.log(content);
     setValue("content", content);
+  };
+
+  const handleCoverUpload = (url: string) => {
+    console.log(url)
+    setValue("coverImage", url);
   };
 
   const onSubmit: SubmitHandler<ArticleInputs> = async (data) => {
@@ -81,6 +89,10 @@ export default function ArticleForm({ article }: ArticleFormProps) {
       </h1>
       {error && <p className="text-red-500 mb-4">{error}</p>}
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <ArticleCoverUpload
+          initialImage={article?.coverImage}
+          onImageUpload={handleCoverUpload}
+        />
         <div>
           <label className="block text-sm font-medium mb-1">Título</label>
           <input
