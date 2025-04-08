@@ -1,9 +1,10 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { BadRequestException, Injectable, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Article } from './article.entity';
 import { User } from '../users/user.entity';
 import { ConfigService } from '@nestjs/config';
+import { CloudinaryService } from 'src/cloudinary/cloudinary.service';
 
 @Injectable()
 export class ArticlesService {
@@ -11,7 +12,14 @@ export class ArticlesService {
     @InjectRepository(Article)
     private articlesRepository: Repository<Article>,
     private configService: ConfigService,
-  ) {}
+    private cloudinary: CloudinaryService,
+  ) { }
+
+  async uploadImageToCloudinary(file: Express.Multer.File) {
+    return await this.cloudinary.uploadImage(file).catch(() => {
+      throw new BadRequestException('Invalid file type.');
+    });
+  }
 
   async create(article: Partial<Article>, author: User): Promise<Article> {
     const newArticle = this.articlesRepository.create({ ...article, author });

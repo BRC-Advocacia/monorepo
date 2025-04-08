@@ -18,7 +18,11 @@ export default function ArticleDetailPage() {
     const fetchArticle = async () => {
       try {
         const token = localStorage.getItem("access_token");
-        const response = await axios.get(
+        const response = await axios.get<{
+          title: string;
+          content: string;
+          coverImage?: string;
+        }>(
           `${process.env.NEXT_PUBLIC_API_URL}/articles/${id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
@@ -26,7 +30,7 @@ export default function ArticleDetailPage() {
         );
         setArticle(response.data);
       } catch (err) {
-        console.error("Erro ao buscar o artigo:", err);
+        console.error(err);
       }
     };
     fetchArticle();

@@ -1,6 +1,4 @@
 import { FileInterceptor } from '@nestjs/platform-express';
-import { diskStorage } from 'multer';
-import { extname, join } from 'path';
 import {
   UseInterceptors,
   UploadedFile,
@@ -11,33 +9,30 @@ import {
 } from '@nestjs/common';
 import { JwtAuthGuard } from 'src/auth/auth.guard';
 import { UploadService } from './upload.service';
+import { CloudinaryService } from '../cloudinary/cloudinary.service';
 
 @Controller('api/upload')
 export class UploadController {
-  constructor(private readonly uploadService: UploadService) {}
+  constructor(
+    private readonly uploadService: UploadService,
+    private readonly cloudinaryService: CloudinaryService,
+  ) {}
 
   @Post()
   @UseGuards(JwtAuthGuard)
-  @UseInterceptors(
-    FileInterceptor('cover', {
-      storage: diskStorage({
-        destination: join(__dirname, '..', 'uploads'),
-        filename: (req, file, callback) => {
-          const randomName = Array(32)
-            .fill(null)
-            .map(() => Math.round(Math.random() * 16).toString(16))
-            .join('');
-          return callback(null, `${randomName}${extname(file.originalname)}`);
-        },
-      }),
-    }),
-  )
+  @UseInterceptors(FileInterceptor('cover'))
   async uploadFile(@UploadedFile() file) {
     if (!file) {
-      throw new BadRequestException('File is required');
+      throw new BadRequestException('file is required');
     }
-    const url = `/uploads/${file.filename}`;
-    await this.uploadService.saveImageUrl(url);
-    return { url };
+
+    try {
+      const result = await this.cloudinaryService.uploadImage(file);
+      console.log(result)
+      await this.uploadService.saveImageUrl(result.secure_url);
+      return { url: result.secure_url };
+    } catch (error) {
+      throw new BadRequestException('Error uploading image');
+    }
   }
 }
