@@ -16,15 +16,13 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import api from "../services/api";
 
-export interface ArticleType extends Article {
+export interface ArticleWithCover extends Article {
   coverImage?: string;
   content?: string;
-  author: {
+  author?: {
+    username: string;
     fullname: string;
-    oabnumber: string;
-    entitlement: string;
   };
-  title: string;
 }
 
 export function ArticleCard({
@@ -40,7 +38,7 @@ export function ArticleCard({
   setArticles: React.Dispatch<React.SetStateAction<Article[]>>;
   router: AppRouterInstance;
 }) {
-  const [articleData, setArticleData] = useState<ArticleType | null>(null);
+  const [article, setArticle] = useState<ArticleWithCover | null>(null);
   const handleDelete = async (id: number) => {
     try {
       const token = localStorage.getItem("access_token");
@@ -53,33 +51,26 @@ export function ArticleCard({
         articles.filter((article) => article.id !== id)
       );
     } catch (err) {
-      console.error("handleDelete error:", err);
+      console.error("DELETE ArticleCard:", err);
     }
   };
 
   useEffect(() => {
     const fetchArticle = async () => {
-      try {
         const res = await api.get(`/articles/${id}`);
-        console.log("res.data", res.data)
-        setArticleData(res.data);
-      } catch (error) {
-        console.error("articleCard", error);
-      }
+        setArticle(res.data);
     };
     fetchArticle();
-    console.log("articleData", articleData)
-
   }, [id]);
 
   return (
     <Card className="flex flex-col py-0 pb-6 m-w-[350px] overflow-hidden bg-gray-950 justify-between border border-gray-800">
       <div className="w-full">
-        {articleData?.coverImage && (
+        {article?.coverImage && (
           <div className="relative w-full h-64 mb-4">
             <img
-              src={articleData?.coverImage}
-              alt={articleData.title}
+              src={article.coverImage}
+              alt={title}
               className="w-full h-full object-cover rounded-lg"
             />
           </div>
@@ -99,7 +90,11 @@ export function ArticleCard({
               className="BRC"
             />
           </Avatar>
-              <span className="text-sm text-gray-700">{articleData.title}</span>
+          {
+            article?.author && (
+          <span className="text-sm text-gray-700">{article?.author?.fullname}</span>
+            )
+          }
         </div>
       </CardHeader>
 
