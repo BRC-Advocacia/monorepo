@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, ChangeEvent } from "react";
+import { useState, useRef, ChangeEvent, useEffect } from "react";
 import axios from "axios";
 
 interface ArticleCoverUploadProps {
@@ -12,10 +12,16 @@ export default function ArticleCoverUpload({
   initialImage,
   onImageUpload,
 }: ArticleCoverUploadProps) {
-  const [image, setImage] = useState<string | null>(initialImage || null);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [isUploading, setIsUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (initialImage) {
+      setImagePreview(initialImage);
+    }
+  }, [initialImage]);
 
   const handleImageUpload = async (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -24,17 +30,13 @@ export default function ArticleCoverUpload({
     setIsUploading(true);
     setError(null);
 
-    try {
-      // First, convert image to base64 for preview
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        if (event.target?.result) {
-          setImage(event.target.result as string);
-        }
-      };
-      reader.readAsDataURL(file);
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setImagePreview(reader.result as string);
+    };
+    reader.readAsDataURL(file);
 
-      // Upload image to server
+    try {
       const formData = new FormData();
       formData.append("cover", file);
 
@@ -53,24 +55,12 @@ export default function ArticleCoverUpload({
 
       console.log("Upload response:", response);
       onImageUpload(response.data.url);
+      // Keep the preview after successful upload, it might be the same or updated
+      setImagePreview(response.data.url);
     } catch (error) {
       console.error("Error uploading image:", error);
-      setImage(null); // Reset the image preview on error
-
-      // Provide more useful error messages
-      if (axios.isAxiosError(error)) {
-        if (error.response?.status === 404) {
-          setError(
-            "Upload endpoint not found. Check the API URL and endpoint path."
-          );
-        } else if (error.response?.status === 401) {
-          setError("Authentication failed. Please log in again.");
-        } else {
-          setError(`Server error: ${error.response?.status || "Unknown"}`);
-        }
-      } else {
-        setError("Failed to upload image. Please try again later.");
-      }
+      setImagePreview(null); // Reset the image preview on error
+      setError("Falha ao enviar a imagem."); // Simplified error message
     } finally {
       setIsUploading(false);
     }
@@ -81,8 +71,11 @@ export default function ArticleCoverUpload({
   };
 
   const removeImage = () => {
-    setImage(null);
+    setImagePreview(null);
     setError(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
     onImageUpload("");
   };
 
@@ -102,20 +95,16 @@ export default function ArticleCoverUpload({
         </div>
       )}
 
-      {image ? (
+      {imagePreview ? (
         <div className="relative group">
           <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden">
             <img
-              src={
-                image.startsWith("data:")
-                  ? image
-                  : `${process.env.NEXT_PUBLIC_API_URL}${image}`
-              }
+              src={imagePreview}
               alt="Capa do artigo"
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+          <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-20 transition-opacity flex items-center justify-center">
             <button
               type="button"
               onClick={triggerFileInput}

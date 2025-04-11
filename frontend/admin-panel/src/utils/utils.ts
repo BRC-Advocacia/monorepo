@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const isTokenValid = (token: string, tokenTimestamp: string | null): boolean => {
+export const isTokenValid = (token: string, tokenTimestamp: string): boolean => {
 
     if (!token || !tokenTimestamp) {
       return false;

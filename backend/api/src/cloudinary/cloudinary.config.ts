@@ -4,6 +4,7 @@ import { v2 as cloudinary } from 'cloudinary';
 import { CLOUDINARY } from './constants';
 
 export const CloudinaryProvider = {
+  // provide: "CLOUDINARY"
   provide: CLOUDINARY,
   useFactory: () => {
     cloudinary.config({

@@ -12,6 +12,20 @@ import {
 import Image from "next/image";
 import { Article } from "./ArticlesDashboard";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import api from "../services/api";
+
+export interface ArticleType extends Article {
+  coverImage?: string;
+  content?: string;
+  author: {
+    fullname: string;
+    oabnumber: string;
+    entitlement: string;
+  };
+  title: string;
+}
 
 export function ArticleCard({
   id,
@@ -26,11 +40,11 @@ export function ArticleCard({
   setArticles: React.Dispatch<React.SetStateAction<Article[]>>;
   router: AppRouterInstance;
 }) {
+  const [articleData, setArticleData] = useState<ArticleType | null>(null);
   const handleDelete = async (id: number) => {
     try {
       const token = localStorage.getItem("access_token");
-      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/articles/${id}`, {
-        method: "DELETE",
+      await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/articles/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -39,20 +53,37 @@ export function ArticleCard({
         articles.filter((article) => article.id !== id)
       );
     } catch (err) {
-      console.error("Erro ao deletar o artigo:", err);
+      console.error("handleDelete error:", err);
     }
   };
+
+  useEffect(() => {
+    const fetchArticle = async () => {
+      try {
+        const res = await api.get(`/articles/${id}`);
+        console.log("res.data", res.data)
+        setArticleData(res.data);
+      } catch (error) {
+        console.error("articleCard", error);
+      }
+    };
+    fetchArticle();
+    console.log("articleData", articleData)
+
+  }, [id]);
 
   return (
     <Card className="flex flex-col py-0 pb-6 m-w-[350px] overflow-hidden bg-gray-950 justify-between border border-gray-800">
       <div className="w-full">
-        <Image
-          width={256}
-          height={256}
-          src="/socios/socios01.jpg"
-          alt="Article cover"
-          className="w-full h-[260px] object-cover object-top shadow-md shadow-gray-800"
-        />
+        {articleData?.coverImage && (
+          <div className="relative w-full h-64 mb-4">
+            <img
+              src={articleData?.coverImage}
+              alt={articleData.title}
+              className="w-full h-full object-cover rounded-lg"
+            />
+          </div>
+        )}
       </div>
 
       <CardHeader>
@@ -68,7 +99,7 @@ export function ArticleCard({
               className="BRC"
             />
           </Avatar>
-          <span className="text-sm text-gray-700">@brcadvogados</span>
+              <span className="text-sm text-gray-700">{articleData.title}</span>
         </div>
       </CardHeader>
 

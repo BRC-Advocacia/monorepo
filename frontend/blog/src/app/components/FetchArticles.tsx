@@ -22,13 +22,12 @@ export default function FetchArticles() {
   useEffect(() => {
     try {
       const fetchArticles = async () => {
-        const response = await api.get<Article[]>(`/articles`);
-        console.log("response", response);
-        setArticles(response.data);
+        const res = await api.get<Article[]>(`/articles`);
+        setArticles(res.data);
       };
       fetchArticles();
     } catch (err) {
-      console.error("test err", err);
+      console.error("fetchArticles", err);
     }
   }, [router]);
 
