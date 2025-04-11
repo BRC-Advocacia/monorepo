@@ -14,7 +14,7 @@ import { Article } from "./ArticlesDashboard";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import api from "../services/api";
+import api from "../../services/api";
 
 export interface ArticleWithCover extends Article {
   coverImage?: string;
@@ -57,8 +57,8 @@ export function ArticleCard({
 
   useEffect(() => {
     const fetchArticle = async () => {
-        const res = await api.get(`/articles/${id}`);
-        setArticle(res.data);
+      const res = await api.get(`/articles/${id}`);
+      setArticle(res.data);
     };
     fetchArticle();
   }, [id]);
@@ -68,7 +68,7 @@ export function ArticleCard({
       <div className="w-full">
         {article?.coverImage && (
           <div className="relative w-full h-64 mb-4">
-            <img
+            <Image
               src={article.coverImage}
               alt={title}
               className="w-full h-full object-cover rounded-lg"
@@ -90,11 +90,11 @@ export function ArticleCard({
               className="BRC"
             />
           </Avatar>
-          {
-            article?.author && (
-          <span className="text-sm text-gray-700">{article?.author?.fullname}</span>
-            )
-          }
+          {article?.author && (
+            <span className="text-sm text-gray-700">
+              {article?.author?.fullname}
+            </span>
+          )}
         </div>
       </CardHeader>
 
