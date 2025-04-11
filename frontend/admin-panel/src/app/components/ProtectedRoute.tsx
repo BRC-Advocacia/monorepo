@@ -9,12 +9,13 @@ export default function ProtectedRoute({ children }: { children: React.ReactNode
 
     useEffect(() => {
         const token = localStorage.getItem('access_token');
+        const tokenTimestamp = localStorage.getItem('token_timestamp')
         if (!token) {
             router.push('/login');
             return;
         }
 
-        if (!isTokenValid()) {
+        if (!isTokenValid(token, tokenTimestamp)) {
             localStorage.removeItem('access_token');
             localStorage.removeItem('token_timestamp');
             router.push('/login');

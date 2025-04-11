@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
 import { User } from '../users/user.entity';
 
 @Entity()
@@ -12,9 +12,19 @@ export class Article {
   @Column('text')
   content: string;
 
-  @ManyToOne(() => User, (user) => user.articles)
-  author: User;
+  @Column({ nullable: true })
+  coverImage?: string;
+  @Column({ name: 'authorId', nullable: true })
+  authorId: number;
 
+  @ManyToOne(() => User, (user) => user.articles)
+  // tipo um inner join pra linkar o artigo ao adv
+  @JoinColumn({
+    name: 'authorId',
+    referencedColumnName: 'id',
+    foreignKeyConstraintName: 'FK_article_authorId'
+  })
+  author: User;
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   created_at: Date;
 

@@ -136,6 +136,29 @@ body {
   height: 0;
   pointer-events: none;
 }
+.prose img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+
+  .prose th, .prose td {
+    border: 1px solid #e5e7eb;
+    padding: 0.5rem;
+    text-align: left;
+  }
+
+  .prose th {
+    background-color: #f9fafb;
+    font-weight: 600;
+  }
 
 @layer base {
   * {

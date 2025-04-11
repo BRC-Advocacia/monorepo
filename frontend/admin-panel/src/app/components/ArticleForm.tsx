@@ -5,10 +5,12 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import TiptapEditor from "./TiptapEditor";
+import ArticleCoverUpload from "./ArticleCoverUpload";
 
 type ArticleInputs = {
   title: string;
   content: string;
+  coverImage?: string;
 };
 
 interface ArticleFormProps {
@@ -16,6 +18,7 @@ interface ArticleFormProps {
     id: number;
     title: string;
     content: string;
+    coverImage?: string;
   };
 }
 
@@ -34,6 +37,11 @@ export default function ArticleForm({ article }: ArticleFormProps) {
     setEditorContent(content);
     console.log(content);
     setValue("content", content);
+  };
+
+  const handleCoverUpload = (url: string) => {
+    console.log(url);
+    setValue("coverImage", url);
   };
 
   const onSubmit: SubmitHandler<ArticleInputs> = async (data) => {
@@ -73,47 +81,64 @@ export default function ArticleForm({ article }: ArticleFormProps) {
       setError("Ocorreu um erro ao salvar o artigo.");
     }
   };
-
   return (
-    <div className="bg-white p-8 rounded shadow-md w-full max-w-2xl">
-      <h1 className="text-2xl font-bold mb-6">
+    <div className="bg-white p-12 rounded-lg shadow-lg w-full max-w-5xl mx-auto my-12 border border-gray-200">
+      <h1 className="text-3xl font-bold mb-8 text-gray-800 border-b pb-4">
         {article ? "Editar Artigo" : "Criar Artigo"}
       </h1>
-      {error && <p className="text-red-500 mb-4">{error}</p>}
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      {error && (
+        <p className="text-red-600 mb-4 bg-red-100 p-3 rounded">{error}</p>
+      )}
+        <label className="block text-sm font-medium text-gray-700 mb-1">
+            Capa do artigo
+          </label>
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+          <ArticleCoverUpload
+            initialImage={article?.coverImage}
+            onImageUpload={handleCoverUpload}
+          />
         <div>
-          <label className="block text-sm font-medium mb-1">Título</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Título
+          </label>
           <input
             {...register("title", { required: "Título é obrigatório" })}
             defaultValue={article?.title}
-            className="w-full p-2 border rounded"
+            className="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+            placeholder="Digite o título do artigo"
           />
           {errors.title && (
-            <p className="text-red-500 text-sm">{errors.title.message}</p>
+            <p className="text-red-600 text-sm mt-1">{errors.title.message}</p>
           )}
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-1">Conteúdo</label>
-          <TiptapEditor
-            content={article?.content}
-            onUpdate={handleEditorChange}
-          />
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Conteúdo
+          </label>
+          <div className="border border-gray-300 rounded-md overflow-hidden">
+            <TiptapEditor
+              content={article?.content}
+              onUpdate={handleEditorChange}
+            />
+          </div>
           <input
             type="hidden"
             {...register("content", { required: "Conteúdo é obrigatório" })}
             value={editorContent}
           />
           {errors.content && (
-            <p className="text-red-500 text-sm">{errors.content.message}</p>
+            <p className="text-red-600 text-sm mt-1">
+              {errors.content.message}
+            </p>
           )}
         </div>
 
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded"
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-md transition duration-150 ease-in-out"
         >
-          Salvar Artigo
+          {article ? "Salvar Alterações" : "Publicar Artigo"}
         </button>
       </form>
     </div>
