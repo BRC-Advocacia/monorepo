@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import TiptapEditor from "./TiptapEditor";
+import TiptapEditor from "../TiptapEditor";
 import ArticleCoverUpload from "./ArticleCoverUpload";
 
 type ArticleInputs = {
@@ -89,14 +89,14 @@ export default function ArticleForm({ article }: ArticleFormProps) {
       {error && (
         <p className="text-red-600 mb-4 bg-red-100 p-3 rounded">{error}</p>
       )}
-        <label className="block text-sm font-medium text-gray-700 mb-1">
-            Capa do artigo
-          </label>
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-          <ArticleCoverUpload
-            initialImage={article?.coverImage}
-            onImageUpload={handleCoverUpload}
-          />
+      <label className="block text-sm font-medium text-gray-700 mb-1">
+        Capa do artigo
+      </label>
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+        <ArticleCoverUpload
+          initialImage={article?.coverImage}
+          onImageUpload={handleCoverUpload}
+        />
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Título
