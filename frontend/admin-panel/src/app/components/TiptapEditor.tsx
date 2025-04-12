@@ -80,14 +80,14 @@ export default function TiptapEditor({ content, onUpdate }: TiptapEditorProps) {
         },
       }),
     ],
-    content: content || "<p>Comece a escrever seu artigo...</p>",
+    content: content || "",
     onUpdate: ({ editor }) => {
       onUpdate(editor.getHTML());
     },
     editorProps: {
       attributes: {
         class:
-          "prose prose-sm prose-violet-400 sm:prose mx-auto focus:outline-none leading-none",
+          "prose prose-sm prose-violet-400 sm:prose focus:outline-none leading-none w-full max-w-[800px] prose-h1:my-0 prose-h1:py-0 prose-h2:my-0 prose-h2:py-0 prose-h3:my-0 prose-h3:py-0 prose-img:self-center",
       },
     },
   });
@@ -102,7 +102,7 @@ export default function TiptapEditor({ content, onUpdate }: TiptapEditorProps) {
     <div className="rounded-lg bg-white">
       <EditorToolbar editor={editor} />
       <EditorContent
-        className="p-4 min-h-[300px] max-h-[600px] max-w-[800px] overflow-y-auto"
+        className="p-4 min-h-[300px] max-w-full overflow-y-auto flex justify-center mx-auto"
         editor={editor}
       />
     </div>
