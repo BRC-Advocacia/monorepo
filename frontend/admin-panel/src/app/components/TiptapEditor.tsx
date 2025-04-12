@@ -87,7 +87,7 @@ export default function TiptapEditor({ content, onUpdate }: TiptapEditorProps) {
     editorProps: {
       attributes: {
         class:
-          "prose prose-sm prose-violet-400 sm:prose lg:prose-lg xl:prose-2xl mx-auto focus:outline-none",
+          "prose prose-sm prose-violet-400 sm:prose mx-auto focus:outline-none leading-none",
       },
     },
   });
@@ -99,10 +99,10 @@ export default function TiptapEditor({ content, onUpdate }: TiptapEditorProps) {
   }, [editor, content]);
 
   return (
-    <div className="border rounded-lg bg-white">
+    <div className="rounded-lg bg-white">
       <EditorToolbar editor={editor} />
       <EditorContent
-        className="p-4 min-h-[300px] max-h-[600px] overflow-y-auto"
+        className="p-4 min-h-[300px] max-h-[600px] max-w-[800px] overflow-y-auto"
         editor={editor}
       />
     </div>
