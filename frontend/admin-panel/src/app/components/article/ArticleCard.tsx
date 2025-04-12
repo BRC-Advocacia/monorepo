@@ -69,6 +69,8 @@ export function ArticleCard({
         {article?.coverImage && (
           <div className="relative w-full h-64 mb-4">
             <Image
+              width={600}
+              height={600}
               src={article.coverImage}
               alt={title}
               className="w-full h-full object-cover rounded-lg"
