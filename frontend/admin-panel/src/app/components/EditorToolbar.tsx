@@ -43,7 +43,7 @@ export default function EditorToolbar({ editor }: EditorToolbarProps) {
   };
 
   return (
-    <div className="flex flex-wrap gap-2 p-2 bg-transparent rounded-t-lg w-full justify-center">
+    <div className="flex flex-wrap gap-2 p-2 bg-transparent rounded-t-lg w-full justify-center border-b border-b-zinc-300">
       <div className="text-zinc-50 flex flex-wrap justify-center border bg-zinc-700 border-zinc-800/50 p-2 rounded-4xl shadow-2xs shadow-violet-800/20">
         <div className="flex items-center gap-1 border-r pr-2">
           <button
