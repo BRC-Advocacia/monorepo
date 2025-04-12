@@ -97,15 +97,12 @@ export default function ArticleForm({ article }: ArticleFormProps) {
           initialImage={article?.coverImage}
           onImageUpload={handleCoverUpload}
         />
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Título
-          </label>
+        <div className="after:content-[''] after:w-full after:h-[1px] after:block after:bg-zinc-300/50">
           <input
             {...register("title", { required: "Título é obrigatório" })}
             defaultValue={article?.title}
-            className="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-            placeholder="Digite o título do artigo"
+            className="outline-none block w-full h-full p-3 rounded-md focus:ring-blue-500 focus:border-blue-500 text-zinc-800 text-4xl placeholder:text-zinc-400"
+            placeholder="Título"
           />
           {errors.title && (
             <p className="text-red-600 text-sm mt-1">{errors.title.message}</p>
@@ -113,9 +110,6 @@ export default function ArticleForm({ article }: ArticleFormProps) {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Conteúdo
-          </label>
           <div className="border border-gray-300 rounded-md overflow-hidden">
             <TiptapEditor
               content={article?.content}
