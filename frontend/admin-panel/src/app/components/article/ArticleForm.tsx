@@ -11,6 +11,7 @@ type ArticleInputs = {
   title: string;
   content: string;
   coverImage?: string;
+  subtitle: string;
 };
 
 interface ArticleFormProps {
@@ -19,6 +20,7 @@ interface ArticleFormProps {
     title: string;
     content: string;
     coverImage?: string;
+    subtitle?: string;
   };
 }
 
@@ -78,7 +80,7 @@ export default function ArticleForm({ article }: ArticleFormProps) {
   };
   return (
     <div className="bg-white p-12 rounded-lg shadow-lg w-full max-w-5xl mx-auto my-12 border border-gray-200">
-      <h1 className="text-3xl font-bold mb-8 text-gray-800 border-b pb-4">
+      <h1 className="text-3xl font-bold text-gray-800 mb-8">
         {article ? "Editar Artigo" : "Criar Artigo"}
       </h1>
       {error && (
@@ -92,7 +94,10 @@ export default function ArticleForm({ article }: ArticleFormProps) {
           initialImage={article?.coverImage}
           onImageUpload={handleCoverUpload}
         />
-        <div className="after:content-[''] after:w-full after:h-[1px] after:block after:bg-zinc-300/50">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Título
+          </label>
           <input
             {...register("title", { required: "Título é obrigatório" })}
             defaultValue={article?.title}
@@ -105,6 +110,24 @@ export default function ArticleForm({ article }: ArticleFormProps) {
         </div>
 
         <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Subtítulo
+          </label>
+          <input
+            {...register("subtitle", { required: "Subtítulo é obrigatório" })}
+            defaultValue={article?.subtitle}
+            className="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+            placeholder="Digite o subtítulo do artigo"
+          />
+          {errors.subtitle && (
+            <p className="text-red-600 text-sm mt-1">{errors.subtitle.message}</p>
+          )}
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Conteúdo
+          </label>
           <div className="border border-gray-300 rounded-md overflow-hidden">
             <TiptapEditor
               content={article?.content}
@@ -125,7 +148,7 @@ export default function ArticleForm({ article }: ArticleFormProps) {
 
         <button
           type="submit"
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-md transition duration-150 ease-in-out"
+          className="hover:cursor-pointer w-full bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-md transition duration-150 ease-in-out"
         >
           {article ? "Salvar Alterações" : "Publicar Artigo"}
         </button>

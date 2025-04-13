@@ -2,6 +2,7 @@
 Todo:
 
 Current tasks:
+  - Add loader before dashboard component render
   - add BRC Typography (roboto, poppins, antic didone)
   - Improve ArticleForm component UI (Centralized)
   - ArticleList and ArticleDashboard components can stay on the same file
@@ -20,3 +21,4 @@ Futures adds:
     - Create an explained readme for both areas (front-end and back-end & cloud)
     - Adicionar um Modelo de artigo como base para novos artigos
     - Adicionar categorias (etiquetas de áreas do advogado)
+    - Lógica de cálculo de tempo de leitura de cada artigo
