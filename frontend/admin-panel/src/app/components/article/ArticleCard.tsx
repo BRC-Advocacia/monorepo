@@ -108,7 +108,7 @@ export function ArticleCard({
             className="flex items-center gap-1 hover:bg-transparent cursor-pointer hover:text-gray-200 duration-200"
           >
             <Pencil className="h-3 w-3" />
-            Edit
+            Editar
           </Button>
           <Button
             onClick={() => handleDelete(id)}
@@ -116,7 +116,7 @@ export function ArticleCard({
             className="flex items-center gap-1 text-destructive hover:bg-transparent hover:text-destructive cursor-pointer  duration-200"
           >
             <Trash2 className="h-3 w-3" />
-            Delete
+            Deletar
           </Button>
         </div>
       </CardContent>

@@ -23,4 +23,7 @@ export class User {
 
   @OneToMany(() => Article, (article) => article.author)
   articles: Article[];
+
+  @Column()
+  lawyerPhoto: string;
 }
