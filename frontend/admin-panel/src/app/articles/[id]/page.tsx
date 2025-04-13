@@ -5,7 +5,7 @@ import axios from "axios";
 import { useParams } from "next/navigation";
 import ArticleForm from "@/app/components/article/ArticleForm";
 import { useRouter } from "next/navigation";
-import ProtectedRoute from "@/app/components/ProtectedRoute";
+import ProtectedRoute from "@/app/components/routes/ProtectedRoute";
 
 export default function EditArticlePage() {
   const params = useParams();

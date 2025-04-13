@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ProtectedRoute from "../components/ProtectedRoute";
+import ProtectedRoute from "@/app/components/routes/ProtectedRoute";
 import ArticlesDashboard from "@/app/components/article/ArticlesDashboard";
 import { Plus } from "lucide-react";
 

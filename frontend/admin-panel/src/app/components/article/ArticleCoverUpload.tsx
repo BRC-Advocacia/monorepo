@@ -55,12 +55,11 @@ export default function ArticleCoverUpload({
 
       console.log("Upload response:", response);
       onImageUpload(response.data.url);
-      // Keep the preview after successful upload, it might be the same or updated
       setImagePreview(response.data.url);
     } catch (error) {
       console.error("Error uploading image:", error);
-      setImagePreview(null); // Reset the image preview on error
-      setError("Falha ao enviar a imagem."); // Simplified error message
+      setImagePreview(null);
+      setError("Falha ao enviar a imagem.");
     } finally {
       setIsUploading(false);
     }

@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import { useEditor, EditorContent } from "@tiptap/react";
 import Placeholder from "@tiptap/extension-placeholder";
 import StarterKit from "@tiptap/starter-kit";
@@ -12,8 +13,7 @@ import TextAlign from "@tiptap/extension-text-align";
 import Highlight from "@tiptap/extension-highlight";
 import TaskList from "@tiptap/extension-task-list";
 import TaskItem from "@tiptap/extension-task-item";
-import { useEffect } from "react";
-import EditorToolbar from "./EditorToolbar";
+import EditorToolbar from "../toolbar/EditorToolbar";
 
 interface TiptapEditorProps {
   content?: string;

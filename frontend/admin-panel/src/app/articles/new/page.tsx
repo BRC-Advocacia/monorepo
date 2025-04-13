@@ -1,4 +1,4 @@
-import ProtectedRoute from "@/app/components/ProtectedRoute";
+import ProtectedRoute from "@/app/components/routes/ProtectedRoute";
 import ArticleForm from "@/app/components/article/ArticleForm";
 
 export default function NewArticlePage() {

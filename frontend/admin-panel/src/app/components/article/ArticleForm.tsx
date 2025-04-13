@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import TiptapEditor from "../TiptapEditor";
+import TiptapEditor from "../tiptap/TiptapEditor";
 import ArticleCoverUpload from "./ArticleCoverUpload";
 
 type ArticleInputs = {
@@ -72,11 +72,6 @@ export default function ArticleForm({ article }: ArticleFormProps) {
         err.response.status === 401
       ) {
         router.push("/login");
-      } else {
-        console.error(
-          "Erro ao carregar os artigos no painel administrativo ",
-          err
-        );
       }
       setError("Ocorreu um erro ao salvar o artigo.");
     }

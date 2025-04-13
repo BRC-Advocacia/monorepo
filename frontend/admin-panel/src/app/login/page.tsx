@@ -1,7 +1,7 @@
 "use client";
-import LoginForm from "@/app/components/LoginForm";
+import LoginForm from "@/app/components/login/LoginForm";
 import Image from "next/image";
-import { AuroraBackground } from "../components/AuroraBackground";
+import { AuroraBackground } from "../components/aurora-bg/AuroraBackground";
 import { motion } from "motion/react";
 
 export default function LoginPage() {

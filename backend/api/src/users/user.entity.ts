@@ -24,6 +24,6 @@ export class User {
   @OneToMany(() => Article, (article) => article.author)
   articles: Article[];
 
-  @Column()
+  @Column({ nullable: true })
   lawyerPhoto: string;
 }

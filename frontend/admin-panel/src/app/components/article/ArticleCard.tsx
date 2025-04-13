@@ -1,6 +1,6 @@
 import { ArrowRight, Pencil, Trash2 } from "lucide-react";
-import { Avatar, AvatarImage } from "@/app/components/ui/Avatar";
-import { Button } from "@/app/components/ui/Button";
+import { Avatar, AvatarImage } from "@/app/components/card-ui/Avatar";
+import { Button } from "@/app/components/card-ui/Button";
 import {
   Card,
   CardContent,
@@ -8,7 +8,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/app/components/ui/Card";
+} from "@/app/components/card-ui/Card";
 import Image from "next/image";
 import { Article } from "./ArticlesDashboard";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
@@ -22,6 +22,7 @@ export interface ArticleWithCover extends Article {
   author?: {
     username: string;
     fullname: string;
+    lawyerPhoto: string;
   };
 }
 
@@ -87,9 +88,8 @@ export function ArticleCard({
         <div className="flex items-center mt-2 space-x-2 grow">
           <Avatar>
             <AvatarImage
-              src="/logos/logo-azul.svg"
-              alt="Creator"
-              className="BRC"
+              src={article?.author?.lawyerPhoto}
+              alt="Foto do advogado"
             />
           </Avatar>
           {article?.author && (
