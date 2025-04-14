@@ -22,6 +22,7 @@ interface TiptapEditorProps {
 
 export default function TiptapEditor({ content, onUpdate }: TiptapEditorProps) {
   const editor = useEditor({
+    immediatelyRender: false,
     extensions: [
       StarterKit.configure({
         heading: {
