@@ -101,7 +101,7 @@ export default function ArticleForm({ article }: ArticleFormProps) {
           <input
             {...register("title", { required: "Título é obrigatório" })}
             defaultValue={article?.title}
-            className="outline-none block w-full h-full p-3 rounded-md focus:ring-blue-500 focus:border-blue-500 text-zinc-800 text-4xl placeholder:text-zinc-400"
+            className="outline-none block w-full h-full p-3 rounded-md focus:ring-blue-500 focus:border-blue-500 text-zinc-800 text-4xl placeholder:text-zinc-400 border border-gray-300 font-[800]"
             placeholder="Título"
           />
           {errors.title && (
@@ -116,11 +116,13 @@ export default function ArticleForm({ article }: ArticleFormProps) {
           <input
             {...register("subtitle", { required: "Subtítulo é obrigatório" })}
             defaultValue={article?.subtitle}
-            className="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+            className="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 outline-none"
             placeholder="Digite o subtítulo do artigo"
           />
           {errors.subtitle && (
-            <p className="text-red-600 text-sm mt-1">{errors.subtitle.message}</p>
+            <p className="text-red-600 text-sm mt-1">
+              {errors.subtitle.message}
+            </p>
           )}
         </div>
 
