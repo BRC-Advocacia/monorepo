@@ -5,7 +5,9 @@ import axios from "axios";
 import { useParams } from "next/navigation";
 import ArticleForm from "@/app/components/article/ArticleForm";
 import { useRouter } from "next/navigation";
-import ProtectedRoute from "@/app/components/ProtectedRoute";
+import ProtectedRoute from "@/app/components/routes/ProtectedRoute";
+import { Button } from "@/app/components/card-ui/Button";
+import { ArrowLeft } from "lucide-react";
 
 export default function EditArticlePage() {
   const params = useParams();
@@ -54,11 +56,24 @@ export default function EditArticlePage() {
 
   return (
     <ProtectedRoute>
-      {auth && (
-        <div className="min-h-screen bg-gray-100 p-8">
-          <ArticleForm article={article} />
+      <div className="min-h-screen bg-gray-100 p-8">
+        <div>
+          <Button
+            variant="outline"
+            onClick={() => router.push("/dashboard")}
+            className="flex items-center gap-2 hover:bg-gray-100 hover:cursor-pointer"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Voltar para o Dashboard
+          </Button>
         </div>
-      )}
+
+        {auth && (
+          <div>
+            <ArticleForm article={article} />
+          </div>
+        )}
+      </div>
     </ProtectedRoute>
   );
 }

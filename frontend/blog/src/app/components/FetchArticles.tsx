@@ -47,7 +47,7 @@ export default function FetchArticles() {
           <h1 className="text-2xl">{article.title}</h1>
           <p>
             {article.content.length > 70
-              ? `${article.content.slice(0, 70)}...`
+              ? `${article.content.slice(0, 400)}...`
               : article.content}
           </p>
           {/* <div dangerouslySetInnerHTML={{ __html: article.content.length > 70 ? `${article.content.slice(0, 70)}...` : article.content }} /> */}
