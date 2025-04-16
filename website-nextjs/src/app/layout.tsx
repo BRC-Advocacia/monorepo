@@ -1,6 +1,8 @@
 import { Poppins, Roboto, Antic_Didone } from "next/font/google";
 import "./globals.css";
-import { homePageMetadata } from "./config/metadata";
+import "./typography.css";
+import "./colors.css";
+import { homePageMetadata } from "@/config/metadata";
 
 const roboto = Roboto({
   variable: "--font-roboto",
