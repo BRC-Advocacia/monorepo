@@ -3,7 +3,7 @@ import React from "react";
 
 const SecondSection = () => {
   return (
-    <section className="py-[4rem] max-h-screen grid grid-cols-1 lg:grid-cols-[1fr_2.2fr] gap-6 px-5 md:px-10">
+    <section className="my-[4rem] max-h-screen grid grid-cols-1 lg:grid-cols-[1fr_2.2fr] gap-6 px-5 md:px-10 relative">
       <div className="lg:py-5">
         <div className="mb-5 lg:mb-10">
           <p className="fadeInDown font-1-m cor-6 ">
@@ -20,7 +20,7 @@ const SecondSection = () => {
           de sucesso e dedicação ao atendimento de nossos clientes.
         </p>
       </div>
-      <div className="flex justify-end">
+      <div className="lg:py-5 flex justify-end self-center">
         <Image
           className="rounded-2xl w-full h-[90%] object-cover"
           width={1024}
@@ -29,6 +29,13 @@ const SecondSection = () => {
           alt="Sócios juntos"
         />
       </div>
+      <Image
+        src={"/img/decoracoes/bottom-left.svg"}
+        alt="Decoração"
+        width={64}
+        height={64}
+        className="hidden lg:block absolute bottom-[-40px] left-10"
+      />
     </section>
   );
 };
