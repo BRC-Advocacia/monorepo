@@ -3,7 +3,7 @@ import React from "react";
 
 const SecondSection = () => {
   return (
-    <section className="my-[4rem] max-h-screen grid grid-cols-1 lg:grid-cols-[1fr_2.2fr] gap-6 px-5 md:px-10 relative">
+    <section className="my-[4rem] max-h-screen grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 px-5 md:px-10 relative">
       <div className="lg:py-5">
         <div className="mb-5 lg:mb-10">
           <p className="fadeInDown font-1-m cor-6 ">
