@@ -14,7 +14,7 @@ const FirstSection = () => {
           className="w-screen h-screen object-cover object-top absolute top-0 z-[-10]"
           sizes="100vw"
         />
-        <div className="absolute top-0 h-screen left-0 right-0 bg-sky-950/50 z-[-9]" />
+        <div className="absolute top-0 h-screen left-0 right-0 bg-slate-800/90 z-[-9]" />
       </div>
       <div className="h-screen flex flex-col justify-center items-center px-5">
         <h1 className="cor-0 font-3-xxl text-center">
