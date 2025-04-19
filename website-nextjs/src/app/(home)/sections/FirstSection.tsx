@@ -1,5 +1,5 @@
+import Button from "@/app/components/Button";
 import Image from "next/image";
-import Link from "next/link";
 
 const FirstSection = () => {
   return (
@@ -26,18 +26,9 @@ const FirstSection = () => {
         <p className="text-slate-200/65 font-2-l mt-5 text-center">
           Com uma infraestrutura moderna, atendemos clientes de todo o Brasil
         </p>
-        <Link
-          href={"/contato"}
-          className="py-3 px-6 poppins text-xl cor-azul-escuro bg-(--cor-p2) rounded flex gap-2 mt-10 shadow shadow-slate-900"
-        >
+        <Button href="/contato" src="/img/icones/whatsapp.svg">
           Entre em contato!
-          <Image
-            src={"/img/icones/whatsapp.svg"}
-            alt="Ícone do Whatsapp"
-            width={18}
-            height={18}
-          />
-        </Link>
+        </Button>
       </div>
     </section>
   );
