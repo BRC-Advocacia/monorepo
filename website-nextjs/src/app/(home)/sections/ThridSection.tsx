@@ -14,7 +14,7 @@ const ThridSection = () => {
           className="w-screen h-screen object-cover object-top absolute top-0 z-[-10]"
           sizes="100vw"
         />
-        <div className="absolute top-0 h-screen left-0 right-0 bg-sky-950/70 z-[-9]" />
+        <div className="absolute top-0 h-screen left-0 right-0 bg-slate-800/90 z-[-9]" />
       </div>
       <div className="py-[4rem] px-5 md:px-10">
         <div className="mb-5 lg:mb-10">
