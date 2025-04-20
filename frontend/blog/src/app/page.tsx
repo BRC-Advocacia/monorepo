@@ -30,12 +30,12 @@ export default async function BlogPage() {
   const remainingArticles = articles.slice(1);
 
   return (
-    <main className="min-h-screen bg-gray-50">
-      <div className="">
+    <main className="min-h-screen">
+      <div className="bg-white">
         <Header />
-        <section className="bg-gradient-to-b from-blue-950 to-cyan-800 text-white py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <section className="bg-gradient-to-b from-blue-950 to-blue-900 text-white py-16 ">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:-mb-32">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="space-y-6">
                 <h1 className="text-4xl font-bold leading-tight">
                   {featuredArticle.title}
@@ -78,11 +78,12 @@ export default async function BlogPage() {
           </div>
         </section>
       </div>
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white mt-48">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 ">
-            Artigos em Alta
-          </h2>
+            <div className="flex flex-col items-center mb-12">
+                <div className="w-32 h-1 bg-blue-800 mb-4"></div>
+                <h2 className="text-5xl font-bold text-blue-950">Artigos em Alta</h2>
+            </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {remainingArticles.map((article) => (
               <article key={article.id} className="group">

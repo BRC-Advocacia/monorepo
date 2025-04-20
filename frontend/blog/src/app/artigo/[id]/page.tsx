@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import  api  from "../../services/api";
+import api from "../../services/api";
 import Image from "next/image";
 import { Calendar, Clock } from "lucide-react";
 import { notFound } from "next/navigation";
@@ -17,15 +17,16 @@ interface Article {
   };
 }
 
-// https://nextjs.org/docs/app/api-reference/functions/generate-metadata
+// metadata for the article page
 export async function generateMetadata({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   try {
-    const response = await api.get(`/articles/${params.id}`);
-    const article: Article = await response.data as Article;
+    const resolvedParams = await params;
+    const response = await api.get<Article>(`/articles/${resolvedParams.id}`);
+    const article = response.data;
 
     return {
       title: `${article.title} | BRC Advocacia`,
@@ -41,15 +42,15 @@ export async function generateMetadata({
 export default async function ArticlePage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   try {
-    const response = await api.get<Article>(`/articles/${params.id}`);
+    const resolvedParams = await params;
+    const response = await api.get<Article>(`/articles/${resolvedParams.id}`);
     const article = response.data;
 
     return (
       <main className="min-h-screen bg-gray-50">
-        {/* Article Header */}
         <section className="bg-white py-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -84,7 +85,6 @@ export default async function ArticlePage({
           </div>
         </section>
 
-        {/* Article Content */}
         <section className="py-12">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="relative h-96 mb-12">
