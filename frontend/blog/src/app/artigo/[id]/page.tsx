@@ -17,6 +17,7 @@ interface Article {
   };
 }
 
+// https://nextjs.org/docs/app/api-reference/functions/generate-metadata
 export async function generateMetadata({
   params,
 }: {
@@ -24,7 +25,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   try {
     const response = await api.get(`/articles/${params.id}`);
-    const article: Article = response.data as Article;
+    const article: Article = await response.data as Article;
 
     return {
       title: `${article.title} | BRC Advocacia`,
