@@ -6,21 +6,21 @@ const SecondSection = () => {
     <section className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 px-5 md:px-10 relative max-h-auto lg:max-h-screen">
       <div className="pt-[4rem]">
         <div className="mb-5 lg:mb-10">
-          <p className="fadeInDown font-1-m cor-6 ">
+          <p className="fadeInDown font-1-m cor-6 text-center sm:text-start">
             RESPONSABILIDADE E TRANSPARÊNCIA
           </p>
-          <h2 className="cor-azul-escuro font-3-xxl ">
+          <h2 className="cor-azul-escuro font-3-xxl text-center sm:text-start">
             quem somos<span className="cor-p5">.</span>
           </h2>
         </div>
-        <p className="font-1-s cor-azul-escuro container">
+        <p className="font-1-s cor-azul-escuro container text-center sm:text-start">
           Um escritório que alia tradição e inovação para fornecer soluções
           jurídicas excepcionais. Fundado com o compromisso de oferecer serviços
           jurídicos de excelência, nosso escritório tem uma orgulhosa história
           de sucesso e dedicação ao atendimento de nossos clientes.
         </p>
       </div>
-      <div className="pb-[4rem] flex justify-end self-center">
+      <div className="pb-[4rem] lg:py-[4rem] flex justify-end self-center">
         <Image
           className="rounded-2xl w-full max-h-[80vh] object-cover"
           width={1024}

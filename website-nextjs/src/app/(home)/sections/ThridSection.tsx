@@ -4,29 +4,27 @@ import React from "react";
 
 const ThridSection = () => {
   return (
-    <section className="h-[150vh] relative">
+    <section className="relative h-[90vh] lg:h-[95vh]">
       <Image
         priority
         alt="Imagem de background para a seção de introdução da página."
         src={"/img/home/atuacao-bg.jpeg"}
-        width={1800}
-        height={1800}
-        className="w-screen h-[150vh] blur object-cover object-top absolute top-0 z-[-10]"
-        sizes="150vh"
+        width={1200}
+        height={1200}
+        className="w-screen h-[90vh] lg:h-[95vh] blur-[4px] object-cover object-top absolute top-0 z-[-10]"
+        sizes="100vh"
       />
-      <div className="absolute top-0 h-[150vh] left-0 right-0 bg-slate-800/90 z-[-9]" />
-      <div className="py-[4rem] h-full px-5 md:px-10 flex flex-col absolute top-0">
-        <div className="mb-5 lg:mb-10">
-          <p className="fadeInDown font-1-m cor-4 container">
+      <div className="absolute top-0 h-[90vh] lg:h-[95vh] left-0 right-0 bg-slate-800/90 z-[-9]" />
+      <div className="py-[4rem] w-full h-full px-5 md:px-10 flex flex-col top-0">
+        <div className="mb-10 lg:mb-15">
+          <p className="fadeInDown font-1-m cor-4 container text-center sm:text-start">
             PLANO ESTRATÉGICO E ESPECIALIZADO
           </p>
-          <h2 className="cor-0 font-3-xxl container">
+          <h2 className="cor-0 font-3-xxl container text-center sm:text-start">
             áreas de atuação<span className="cor-p5">.</span>
           </h2>
         </div>
-        <div>
-          <AreaCarousel />
-        </div>
+        <AreaCarousel />
       </div>
     </section>
   );
