@@ -1,3 +1,4 @@
+import CardAreas from "@/components/home/CardAreas";
 import Image from "next/image";
 import React from "react";
 
@@ -24,6 +25,9 @@ const ThridSection = () => {
           <h2 className="cor-0 font-3-xxl container">
             áreas de atuação<span className="cor-p5">.</span>
           </h2>
+        </div>
+        <div>
+          <CardAreas />
         </div>
       </div>
     </section>
