@@ -15,51 +15,6 @@ export type AreaProps = {
   icon: React.ReactNode;
 };
 
-export function AreaCarousel() {
-  return (
-    <div className="w-full max-w-5xl mx-auto px-4">
-      <Carousel
-        opts={{
-          align: "start",
-          slidesToScroll: 3,
-        }}
-        className="w-full"
-      >
-        <CarouselContent className="-ml-4">
-          {areasAtuacao &&
-            areasAtuacao.map((area, i) => (
-              <CarouselItem key={i} className="pl-4 md:basis-1/3">
-                <CardArea area={area} />
-                {/* <Card className="max-w-[400px] h-full flex flex-col p-6 gap-0">
-                  <CardTitle className="pb-2 border-b border-b-zinc-600/20">
-                    <p className="cor-7 ml-[2px] roboto font-[300]">direito</p>
-                    <div className="grid grid-cols-[1fr_auto] items-center">
-                      <h2 className="cor-10 poppins font-[400] text-2xl">
-                        {area.title}
-                      </h2>
-                      {area.icon}
-                    </div>
-                  </CardTitle>
-                  <CardContent className="grow px-1 py-4 cor-9 flex flex-col justify-between gap-4 mt-0">
-                    <p>{area.description}</p>
-                    <Button className="flex items-center text-zinc-500 hover:bg-zinc-900 hover:text-zinc-300 cursor-pointer">
-                      <p>Conheça</p>
-                      <MoveRight width={12} height={12} className="mt-1 ml-2" />
-                    </Button>
-                  </CardContent>
-                </Card> */}
-              </CarouselItem>
-            ))}
-        </CarouselContent>
-        <div className="flex justify-end gap-2 mt-6">
-          <CarouselPrevious className="static transform-none" />
-          <CarouselNext className="static transform-none" />
-        </div>
-      </Carousel>
-    </div>
-  );
-}
-
 const areasAtuacao: AreaProps[] = [
   {
     title: "Trabalhista",
@@ -86,3 +41,37 @@ const areasAtuacao: AreaProps[] = [
       "Atuação especializada com experiência em tramitações de revisionais e cobranças com recuperação de créditos e financiamentos.",
   },
 ];
+
+export function AreaCarousel() {
+  return (
+    <div className="w-full max-w-[1400px] mx-auto px-2 sm:px-4">
+      <Carousel
+        opts={{
+          align: "start",
+          slidesToScroll: 1,
+          breakpoints: {
+            "(min-width: 640px)": { slidesToScroll: 2 },
+            "(min-width: 1024px)": { slidesToScroll: 3 },
+          },
+        }}
+        className="w-full"
+      >
+        <CarouselContent className="-ml-4 flex">
+          {areasAtuacao &&
+            areasAtuacao.map((area, i) => (
+              <CarouselItem
+                key={i}
+                className={`pl-4 basis-full sm:basis-1/2 lg:basis-1/3`}
+              >
+                <CardArea area={area} />
+              </CarouselItem>
+            ))}
+        </CarouselContent>
+        <div className="flex justify-center sm:justify-end gap-2 mt-6">
+          <CarouselPrevious className="static transform-none h-8 w-8 sm:h-10 sm:w-10 cursor-pointer disabled:cursor-auto" />
+          <CarouselNext className="static transform-none h-8 w-8 sm:h-10 sm:w-10 cursor-pointer disabled:cursor-auto" />
+        </div>
+      </Carousel>
+    </div>
+  );
+}
