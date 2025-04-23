@@ -3,8 +3,8 @@ import React from "react";
 
 const SecondSection = () => {
   return (
-    <section className="py-[4rem] grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 px-5 md:px-10 relative max-h-screen">
-      <div className="lg:py-5">
+    <section className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 px-5 md:px-10 relative max-h-auto lg:max-h-screen">
+      <div className="pt-[4rem]">
         <div className="mb-5 lg:mb-10">
           <p className="fadeInDown font-1-m cor-6 ">
             RESPONSABILIDADE E TRANSPARÊNCIA
@@ -20,7 +20,7 @@ const SecondSection = () => {
           de sucesso e dedicação ao atendimento de nossos clientes.
         </p>
       </div>
-      <div className="lg:py-5 flex justify-end self-center">
+      <div className="pb-[4rem] flex justify-end self-center">
         <Image
           className="rounded-2xl w-full max-h-[80vh] object-cover"
           width={1024}
