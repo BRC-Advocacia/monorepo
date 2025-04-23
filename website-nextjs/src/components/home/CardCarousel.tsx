@@ -1,5 +1,12 @@
 import type React from "react";
-import { Briefcase, Landmark, Scale } from "lucide-react";
+import {
+  BriefcaseBusiness,
+  Building2,
+  Handshake,
+  Landmark,
+  Scale,
+  Tag,
+} from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -15,18 +22,40 @@ export type AreaProps = {
   icon: React.ReactNode;
 };
 
+// Imobiliário, Empresarial, Societário, Trabalhista e Tributário.
+
 const areasAtuacao: AreaProps[] = [
   {
+    title: "Imobiliário",
+    icon: <Building2 width={18} height={18} className="cor-12 opacity-70" />,
+    description:
+      "Especializados em Direito Imobiliário, oferecemos assessoria completa para compra, venda, locação e regularização de imóveis, garantindo segurança jurídica e soluções personalizadas.",
+  },
+  {
+    title: "Empresarial",
+    icon: <Building2 width={18} height={18} className="cor-12 opacity-70" />,
+    description:
+      "Advocacia especializada para atender com excelência a sua empresa atuando desde o planejamento societário até consultoria empresarial.",
+  },
+  {
+    title: "Societário",
+    icon: <Handshake width={18} height={18} className="cor-12 opacity-70" />,
+    description:
+      "Atuamos em Direito Societário com expertise na constituição, reestruturação e dissolução de empresas, oferecendo soluções estratégicas para fusões, aquisições e governança corporativa.",
+  },
+  {
     title: "Trabalhista",
-    icon: <Briefcase width={18} height={18} className="cor-12 opacity-70" />,
+    icon: (
+      <BriefcaseBusiness width={18} height={18} className="cor-12 opacity-70" />
+    ),
     description:
       "Promovemos equilíbrio nas relações de trabalho, com soluções legais e extrajudiciais para garantir justiça e harmonia.",
   },
   {
-    title: "Previdenciário",
-    icon: <Scale width={18} height={18} className="cor-12 opacity-70" />,
+    title: "Tributário",
+    icon: <Landmark width={18} height={18} className="cor-12 opacity-70" />,
     description:
-      "Assessoria e consultoria jurídica previdenciária, para fornecer a completa orientação, além de acompanhar os pedidos relativos à seguridade social.",
+      "Equipe especializada em direito tributário oferece soluções eficientes, estratégias inteligentes e tranquilidade para clientes em questões fiscais complexas.",
   },
   {
     title: "Civil",
@@ -39,6 +68,24 @@ const areasAtuacao: AreaProps[] = [
     icon: <Landmark width={18} height={18} className="cor-12 opacity-70" />,
     description:
       "Atuação especializada com experiência em tramitações de revisionais e cobranças com recuperação de créditos e financiamentos.",
+  },
+  {
+    title: "Consumidor",
+    icon: <Landmark width={18} height={18} className="cor-12 opacity-70" />,
+    description:
+      "Proporcionamos assistência abrangente em garantias, contratos e controvérsias, assegurando a proteção dos direitos dos consumidores e resoluções justas.",
+  },
+  {
+    title: "Família",
+    icon: <Scale width={18} height={18} className="cor-12 opacity-70" />,
+    description:
+      "Conte com advogados qualificados para proteger seu legado, nossa missão em direito de família e sucessões, divórcio.",
+  },
+  {
+    title: "Marcário",
+    icon: <Tag width={18} height={18} className="cor-12 opacity-70" />,
+    description:
+      "Registre sua marca de forma rápida, fácil e segura. Solicite um orçamento agora mesmo com nossa equipe.",
   },
 ];
 
