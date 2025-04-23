@@ -10,12 +10,12 @@ const ThridSection = () => {
           priority
           alt="Imagem de background para a seção de introdução da página."
           src={"/img/home/atuacao-bg.jpeg"}
-          width={1200}
-          height={1200}
-          className="w-screen h-screen object-cover object-top absolute top-0 z-[-10]"
-          sizes="100vw"
+          width={1800}
+          height={1800}
+          className="w-screen h-[150vh] blur object-cover object-top absolute top-0 z-[-10]"
+          sizes="150vh"
         />
-        <div className="absolute top-0 h-screen left-0 right-0 bg-slate-800/90 z-[-9]" />
+        <div className="absolute top-0 h-[150vh] left-0 right-0 bg-slate-800/90 z-[-9]" />
       </div>
       <div className="py-[4rem] px-5 md:px-10">
         <div className="mb-5 lg:mb-10">
