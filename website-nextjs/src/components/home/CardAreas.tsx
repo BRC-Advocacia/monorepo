@@ -10,9 +10,9 @@ const CardArea = ({ area }: { area: AreaProps }) => {
       {area && (
         <Card className="w-full h-full flex flex-col px-6 py-8 sm:p-6 gap-0">
           <CardTitle className="pb-2 border-b border-b-zinc-600/20">
-            <p className="cor-7 ml-[2px] roboto font-[300]">direito</p>
+            <p className="cor-7 poppins font-[400]">direito</p>
             <div className="grid grid-cols-[1fr_auto] items-center">
-              <h2 className="cor-10 poppins font-[400] text-2xl">
+              <h2 className="cor-10 poppins font-[600] text-2xl">
                 {area.title}
               </h2>
               {area.icon}
