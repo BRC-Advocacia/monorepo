@@ -1,3 +1,4 @@
+"use client";
 import ProtectedRoute from "@/app/components/routes/ProtectedRoute";
 import ArticleForm from "@/app/components/article/ArticleForm";
 import { Button } from "@/app/components/card-ui/Button";
@@ -6,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 export default function NewArticlePage() {
   const router = useRouter();
-  
+
   return (
     <ProtectedRoute>
       <div className="min-h-screen bg-gray-100 p-8">
