@@ -3,11 +3,11 @@ import Link from "next/link";
 
 type TPrimaryButton = {
   href: string;
-  src: string;
+  src?: string;
   children: React.ReactNode;
 };
 
-const Button: React.FC<TPrimaryButton> = ({
+const PrimaryButton: React.FC<TPrimaryButton> = ({
   href,
   children,
   src,
@@ -32,4 +32,4 @@ const Button: React.FC<TPrimaryButton> = ({
   );
 };
 
-export default Button;
+export default PrimaryButton;
