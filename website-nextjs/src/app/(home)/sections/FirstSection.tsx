@@ -1,4 +1,4 @@
-import Button from "@/components/Button";
+import PrimaryButton from "@/components/PrimaryButton";
 import Image from "next/image";
 
 const FirstSection = () => {
@@ -26,9 +26,9 @@ const FirstSection = () => {
         <p className="text-slate-200/65 font-2-l mt-5 text-center">
           Com uma infraestrutura moderna, atendemos clientes de todo o Brasil
         </p>
-        <Button href="/contato" src="/img/icones/whatsapp.svg">
+        <PrimaryButton href="/contato" src="/img/icones/whatsapp.svg">
           Entre em contato!
-        </Button>
+        </PrimaryButton>
       </div>
     </section>
   );

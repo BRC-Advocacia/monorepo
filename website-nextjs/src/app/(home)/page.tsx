@@ -23,6 +23,7 @@ export default async function Home() {
           width={64}
           height={64}
           src="/img/icones/green-whats.svg"
+          className="w-auto h-auto"
           alt="Nosso WhatsApp"
         />
       </Link>
