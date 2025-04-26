@@ -18,11 +18,12 @@ const PartnerCard = ({ partner }: { partner: PartnerProps }) => {
         <Image
           src={partner.image || "/img/socios/placeholder.jpg"}
           alt={`Imagem do sócio ${partner.name}.`}
-          className="absolute -z-100 top-0 left-0 h-full w-full object-cover rounded-2xl"
+          className="absolute -z-80 top-0 left-0 h-full w-full object-cover rounded-2xl"
           width={360}
           height={600}
         />
-        <div className="bg-slate-900/80 absolute -z-50 top-0 left-0 right-0 bottom-0 rounded-2xl" />
+        <div className="bg-slate-900/80 absolute -z-100 top-0 left-0 right-0 bottom-0 rounded-2xl" />
+        <div className="bg-slate-900/40 absolute -z-70 top-0 left-0 right-0 bottom-0 rounded-2xl" />
       </div>
       <div className="grow grid grid-cols-1 grid-rows-[auto_1fr]">
         <CardTitle className="m-0 p-0 flex flex-col md:flex-row justify-between md:items-center mb-4">
@@ -54,7 +55,7 @@ const PartnerCard = ({ partner }: { partner: PartnerProps }) => {
             ))}
           </div>
           <div>
-            <p className="cor-6 font-[400] text-sm">{partner.highlight}</p>
+            <p className="cor-2 font-[400] text-sm">{partner.highlight}</p>
             <button className="flex items-center bg-transparent poppins cor-4 gap-2 cursor-pointer underline group mt-6">
               Conheça <MoveRight width={12} height={12} />
             </button>

@@ -14,23 +14,23 @@ import PartnerCardMobile from "./PartnerCardMobile";
 const partners: PartnerProps[] = [
   {
     name: "Francian Batista",
-    image: "/img/socios/batista.jpg",
+    image: "/img/socios/batista-none.png",
     linkedinUrl: "https://www.linkedin.com/in/francian-batista-7541411aa/",
-    specialties: ["Marcário", "Tributário", "Trabalhista"],
+    specialties: ["Empresarial", "Tributário", "Societário"],
     highlight: "🌟 Coordenador de Comissões OAB/CG",
   },
   {
     name: "Felipe Ramos",
-    image: "/img/socios/ramos.jpg",
+    image: "/img/socios/ramos-none.png",
     linkedinUrl: "https://www.linkedin.com/in/felipebramos/",
-    specialties: ["Cível", "Família", "Consumidor"],
+    specialties: ["Cível", "Família", "Imobiliário"],
     highlight: "🌟 Ouvidor Geral OAB/CG",
   },
   {
     name: "Thiago Câmara",
-    image: "/img/socios/camara.jpg",
+    image: "/img/socios/camara-none.png",
     linkedinUrl: "https://www.instagram.com/advthiagocamara/",
-    specialties: ["Cível", "Família", "Consumidor"],
+    specialties: ["Consumidor", "Trabalhista"],
     highlight: "🌟 Procurador do PROCON de Esperança",
   },
 ];
