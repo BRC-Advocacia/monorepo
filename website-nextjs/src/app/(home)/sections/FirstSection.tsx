@@ -10,7 +10,7 @@ const FirstSection = () => {
         src={"/img/home/background-main.jpeg"}
         width={1200}
         height={1200}
-        className="h-auto w-screen object-cover object-bottom absolute bottom-0 z-[-10]"
+        className="h-full w-screen object-cover object-bottom absolute bottom-0 z-[-10]"
         sizes="100vw"
       />
       <div className="absolute bottom-0 h-full left-0 right-0 bg-slate-800/90 z-[-9]" />
