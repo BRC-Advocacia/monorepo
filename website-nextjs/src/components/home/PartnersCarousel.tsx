@@ -24,7 +24,7 @@ const partners: PartnerProps[] = [
     image: "/img/socios/ramos.jpg",
     linkedinUrl: "https://www.linkedin.com/in/felipebramos/",
     specialties: ["Cível", "Família", "Consumidor"],
-    highlight: "🌟 Especialista Cível",
+    highlight: "🌟 Ouvidor Geral OAB/CG",
   },
   {
     name: "Thiago Câmara",
