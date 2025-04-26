@@ -17,7 +17,7 @@ const PartnerCardMobile = ({ partner }: { partner: PartnerProps }) => {
       <div>
         <Image
           src={
-            `${partner.image.split(".")[0]}-none.png` ||
+            `${partner.image.split(".")[0]}.png` ||
             "/img/socios/placeholder.jpg"
           }
           alt={`Imagem do sócio ${partner.name}.`}
