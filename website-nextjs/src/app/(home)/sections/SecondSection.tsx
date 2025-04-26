@@ -3,7 +3,7 @@ import React from "react";
 
 const SecondSection = () => {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 px-5 md:px-10 relative max-h-auto lg:max-h-screen">
+    <section className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 px-5 md:px-10 relative max-h-auto">
       <div className="pt-[4rem]">
         <div className="mb-5 lg:mb-10">
           <p className="fadeInDown font-1-m cor-6 text-center sm:text-start">
@@ -14,7 +14,7 @@ const SecondSection = () => {
           </h2>
         </div>
         <p className="font-1-s cor-azul-escuro container text-center sm:text-start">
-          Um escritório que alia tradição e inovação para fornecer soluções
+          Um escritório que alinha tradição e inovação para fornecer soluções
           jurídicas excepcionais. Fundado com o compromisso de oferecer serviços
           jurídicos de excelência, nosso escritório tem uma orgulhosa história
           de sucesso e dedicação ao atendimento de nossos clientes.
@@ -22,7 +22,7 @@ const SecondSection = () => {
       </div>
       <div className="pb-[4rem] lg:py-[4rem] flex justify-end self-center">
         <Image
-          className="rounded-2xl w-full max-h-[80vh] object-cover"
+          className="rounded-2xl w-full object-cover"
           width={1024}
           height={732}
           src="/img/quem-somos/3-socios.jpg"
