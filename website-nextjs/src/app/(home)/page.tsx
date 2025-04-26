@@ -4,6 +4,7 @@ import SecondSection from "./sections/SecondSection";
 import ThridSection from "./sections/ThridSection";
 import Link from "next/link";
 import FourthSection from "./sections/FourthSection";
+import FifthSection from "./sections/FifthSection";
 
 export default async function Home() {
   return (
@@ -12,6 +13,7 @@ export default async function Home() {
       <SecondSection />
       <ThridSection />
       <FourthSection />
+      <FifthSection />
       <Link
         className="hidden md:flex items-center gap-4 fixed bottom-10 right-17"
         href="/contato"
