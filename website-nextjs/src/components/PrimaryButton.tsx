@@ -24,6 +24,7 @@ const PrimaryButton: React.FC<TPrimaryButton> = ({
           alt={`Ícone de ${
             src.split("/")[src.split("/").length - 1].split(".")[0]
           }`}
+          className="w-[18px] h-[18px]"
           width={18}
           height={18}
         />

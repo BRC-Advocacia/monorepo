@@ -3,7 +3,7 @@ import React from "react";
 
 const FourthSection = () => {
   return (
-    <section className="flex flex-col gap-6 px-5 py-[4rem] md:px-10 relative max-h-auto lg:max-h-screen mb-12">
+    <section className="flex flex-col gap-6 px-5 md:px-10 relative max-h-auto py-[4rem]">
       <div>
         <p className="fadeInDown font-1-m cor-6 text-center sm:text-start">
           RESPONSABILIDADE E TRANSPARÊNCIA
