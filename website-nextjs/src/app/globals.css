@@ -43,6 +43,18 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+.container-x {
+  @apply flex gap-6 px-5 md:px-10;
+}
+
+.container-y {
+  @apply flex gap-6 py-[4rem] md:px-10;
+}
+
+.container {
+  @apply flex flex-col gap-6 px-5 py-[4rem] md:px-10;
+}
+
 .poppins {
   font-family: var(--font-poppins);
 }
