@@ -3,6 +3,7 @@ import "./globals.css";
 import "./typography.css";
 import "./colors.css";
 import { homePageMetadata } from "@/config/metadata";
+import Header from "@/components/global/Header";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -34,6 +35,7 @@ export default function RootLayout({
       <body
         className={`${antic.variable} ${roboto.variable} ${poppins.variable} antialiased`}
       >
+        <Header />
         {children}
       </body>
     </html>
