@@ -14,7 +14,7 @@ const HeaderNav = () => {
   if (!mobile)
     return (
       <nav className="poppins">
-        <ul className="flex gap-2 items-center cor-4 uppercase">
+        <ul className="flex gap-2 items-center uppercase cor-p2">
           <Link
             href={ePaths.contato}
             className={`rounded-2xl group px-2 hover:text-(--cor-p1)`}
