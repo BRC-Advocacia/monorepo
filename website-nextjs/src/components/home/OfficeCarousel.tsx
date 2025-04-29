@@ -18,20 +18,20 @@ const officePicturesSrc = [
 const OfficeCarousel = () => {
   return (
     <Carousel
-      className="mx-auto lg:mx-0 w-full lg:w-[90%] h-full relative rounded-2xl"
+      className="mx-auto lg:mx-0 w-full lg:w-[90%]  relative rounded-2xl mb-8 md:mb-16 lg:mb-0"
       opts={{
         align: "start",
         slidesToScroll: 1,
       }}
     >
-      <CarouselContent className="rounded-2xl">
+      <CarouselContent className="rounded-2xl h-[80%]">
         {officePicturesSrc.map((src, index) => (
           <CarouselItem
             key={index}
-            className={`basis-full rounded-2xl overflow-hidden p-2 pl-4`}
+            className={`h-full rounded-2xl overflow-hidden p-2 pl-4`}
           >
             <Image
-              className="flex aspect-square items-center justify-center w-full rounded-2xl h-[80%] object-cover"
+              className="flex items-center justify-center w-full rounded-2xl h-[500px] lg:h-[500px] object-cover"
               src={src}
               alt="Foto do escritório BRC"
               width={600}
@@ -40,9 +40,9 @@ const OfficeCarousel = () => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <div className="flex justify-center sm:justify-end gap-2 absolute px-2 bottom-[20%] right-6">
-        <CarouselPrevious className="static transform-none h-8 w-8 sm:h-10 sm:w-10 cursor-pointer disabled:cursor-auto bg-(--azul-escuro)/60 hover:bg-(--azul-escuro)/90 hover:text-(--cor-p2) text-(--cor-p1)" />
-        <CarouselNext className="static transform-none h-8 w-8 sm:h-10 sm:w-10 cursor-pointer disabled:cursor-auto bg-(--azul-escuro)/60 hover:bg-(--azul-escuro)/90 hover:text-(--cor-p2) text-(--cor-p1)" />
+      <div className="flex justify-center sm:justify-end gap-2 absolute px-2 bottom-0 right-6 z-100">
+        <CarouselPrevious className="static transform-none h-12 w-12 cursor-pointer disabled:cursor-auto bg-(--azul-escuro)/60 hover:bg-(--azul-escuro)/90 hover:text-(--cor-p2) text-(--cor-p1)" />
+        <CarouselNext className="static transform-none h-12 w-12 cursor-pointer disabled:cursor-auto bg-(--azul-escuro)/60 hover:bg-(--azul-escuro)/90 hover:text-(--cor-p2) text-(--cor-p1)" />
       </div>
     </Carousel>
   );
