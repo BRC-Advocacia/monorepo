@@ -14,7 +14,7 @@ const roboto = Roboto({
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["300", "400", "600"],
+  weight: ["200", "400", "600"],
 });
 
 const antic = Antic_Didone({
