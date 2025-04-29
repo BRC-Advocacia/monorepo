@@ -16,9 +16,9 @@ const FifthSection = () => {
       <Image
         src={"/img/logos/logo-branca-sem-nome.png"}
         alt="Logo branca BRC."
-        className="absolute -z-9 bottom-5 left-[40px] opacity-15 lg:opacity-20"
-        width={130}
-        height={60}
+        className="absolute -z-9 left-5 sm:bottom-auto sm:top-[4rem] lg:top-auto lg:bottom-[4rem] sm:left-auto right-[40px] opacity-15 lg:opacity-20"
+        width={65}
+        height={30}
       />
       <div>
         <p className="fadeInDown font-1-m cor-4 text-center sm:text-start">
@@ -29,15 +29,15 @@ const FifthSection = () => {
         </h2>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6 items-start">
-        <div>
+        <div className="h-[80%]">
           <OfficeCarousel />
         </div>
-        <div className="grid gap-6">
-          <h3 className="cor-background font-1-xl">
+        <div className="grid gap-3 md:gap-6">
+          <h3 className="cor-background font-1-xl font-[400]">
             Serviço jurídico exemplar presencialmente na Paraíba em Campina
             Grande e Esperança<span className="cor-p2">.</span>
           </h3>
-          <p className="font-1-s cor-4">
+          <p className="font-1-s cor-6">
             Descubra nossos escritórios em Campina Grande e Esperança, onde a
             excelência jurídica se encontra com o atendimento personalizado.
             Estamos aqui para servir e oferecer soluções eficazes para suas
