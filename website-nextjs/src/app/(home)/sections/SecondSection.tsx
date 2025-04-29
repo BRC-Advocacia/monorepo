@@ -13,7 +13,7 @@ const SecondSection = () => {
             quem somos<span className="cor-p5">.</span>
           </h2>
         </div>
-        <p className="font-1-s cor-azul-escuro container text-center sm:text-start">
+        <p className="font-1-s cor-azul-escuro text-center sm:text-start">
           Um escritório que alinha tradição e inovação para fornecer soluções
           jurídicas excepcionais. Fundado com o compromisso de oferecer serviços
           jurídicos de excelência, nosso escritório tem uma orgulhosa história
