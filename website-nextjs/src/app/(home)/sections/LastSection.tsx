@@ -24,15 +24,17 @@ const LastSection = async () => {
         </h2>
       </div>
       <div className="grid grid-cols-1 relative">
-        <div className="flex flex-col items-center">
-          <h2 className="font-1-xl cor-12 mt-6 cor-azul-escuro mb-2 text-center">
-            Especialistas dedicados e focados em te entregar os melhores
-            resultados!
+        <div className="flex flex-col items-center mb-12 lg:mb-24">
+          <h2 className="font-1-xl cor-12 mt-6 cor-azul-escuro mb-3 text-center">
+            <span className="font-[400]">Especialistas dedicados</span>
+            <br />
+            focados em te entregar os{" "}
+            <span className="font-[400]">melhores resultados!</span>
           </h2>
           <p className="font-1-s text-(--azul-escuro)/80 text-center">
             Entre em contato conosco!
           </p>
-          <div className="mt-4 flex gap-3 mx-auto">
+          <div className="mt-6 flex gap-3 mx-auto">
             <Link
               className="flex gap-2 items-center max-w-fit py-2 rounded-2xl cor-12 poppins font-1-x hover:-translate-y-[2px] duration-200"
               href={
@@ -73,13 +75,12 @@ const LastSection = async () => {
             </Link>
           </div>
         </div>
-
         <Image
           src={"/img/logos/logo-azul-sem-nome.png"}
-          width={120}
-          height={120}
-          alt="Foto dos sócios da BRC"
-          className="w-auto object-cover mx-auto mt-6"
+          alt="Logo branca BRC."
+          className="mx-auto opacity-15 lg:opacity-20"
+          width={65}
+          height={30}
           style={{ height: "auto", width: "auto" }}
         />
       </div>
