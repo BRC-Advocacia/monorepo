@@ -20,7 +20,7 @@ const CardArea = ({ area }: { area: AreaProps }) => {
           </CardTitle>
           <CardContent className="grow px-1 py-4 cor-9 flex flex-col justify-between gap-4 mt-0">
             <p>{area.description}</p>
-            <Button className="flex items-center text-zinc-300 hover:bg-zinc-900 hover:text-zinc-500 cursor-pointer">
+            <Button className="flex items-center text-(--cor-p5) bg-(--azul-escuro) hover:bg-(--azul-escuro) hover:text-(--cor-p1) cursor-pointer">
               <p>Conheça</p>
               <MoveRight width={12} height={12} className="mt-1" />
             </Button>
