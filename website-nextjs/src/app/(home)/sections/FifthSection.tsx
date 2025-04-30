@@ -49,7 +49,7 @@ const FifthSection = () => {
           </div>
           <Link
             href={"/contato"}
-            className="pl-[1px] font-1-xs self-center py-0 poppins font-semibold cursor-pointer bg-transparent cor-p2 hover:bg-transparent rounded-2xl max-h-fit max-w-fit duration-200 relative animatedUnderline flex gap-2 items-center after:min-w-full lg:after:min-w-0"
+            className="pl-[1px] font-1-xs self-center py-2 poppins font-semibold cursor-pointer bg-transparent cor-p2 hover:bg-transparent rounded-2xl max-h-fit max-w-fit duration-200 relative animatedUnderline flex gap-2 items-center after:min-w-full lg:after:min-w-0"
           >
             Agende uma consulta presencial! <MoveRight width={16} height={16} />
           </Link>
