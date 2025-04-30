@@ -41,8 +41,8 @@ const OfficeCarousel = () => {
         ))}
       </CarouselContent>
       <div className="flex justify-center sm:justify-end gap-2 absolute px-2 bottom-0 right-6 z-100">
-        <CarouselPrevious className="static transform-none h-12 w-12 cursor-pointer disabled:cursor-auto bg-(--azul-escuro)/60 hover:bg-(--azul-escuro)/90 hover:text-(--cor-p2) text-(--cor-p1)" />
-        <CarouselNext className="static transform-none h-12 w-12 cursor-pointer disabled:cursor-auto bg-(--azul-escuro)/60 hover:bg-(--azul-escuro)/90 hover:text-(--cor-p2) text-(--cor-p1)" />
+        <CarouselPrevious className="static transform-none h-12 w-12 cursor-pointer disabled:cursor-auto bg-(--azul-escuro) hover:bg-(--azul-escuro)/90 hover:text-(--cor-p2) text-(--cor-p1) border-(--cor-p1)" />
+        <CarouselNext className="static transform-none h-12 w-12 cursor-pointer disabled:cursor-auto bg-(--azul-escuro) hover:bg-(--azul-escuro)/90 hover:text-(--cor-p2) text-(--cor-p1) border-(--cor-p1)" />
       </div>
     </Carousel>
   );
