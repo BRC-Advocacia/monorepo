@@ -20,9 +20,10 @@ const FifthSection = () => {
         className="absolute -z-9 left-5 sm:bottom-auto sm:top-[4rem] lg:top-auto lg:bottom-[4rem] sm:left-auto right-[40px] opacity-15 lg:opacity-20 h-[30px] w-auto"
         width={65}
         height={30}
+        style={{ height: "auto", width: "auto" }}
       />
       <div>
-        <p className="fadeInDown font-1-m cor-4 text-center sm:text-start">
+        <p className="fadeInDown font-1-m cor-4 text-center sm:text-start ml-0 sm:ml-1">
           ATENDIMENTO EM TODO O BRASIL
         </p>
         <h2 className="cor-0 font-3-xxl text-center sm:text-start">
