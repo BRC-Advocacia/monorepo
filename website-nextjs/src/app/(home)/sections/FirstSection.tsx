@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const FirstSection = () => {
   return (
-    <section className="min-h-screen flex justify-center relative">
+    <section className="min-h-[600px] h-screen flex justify-center relative">
       <Image
         priority
         alt="Imagem de background para a seção de introdução da página."
