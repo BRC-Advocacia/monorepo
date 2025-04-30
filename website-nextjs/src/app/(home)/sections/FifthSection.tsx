@@ -1,5 +1,7 @@
 import OfficeCarousel from "@/components/home/OfficeCarousel";
+import { MoveRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const FifthSection = () => {
@@ -16,7 +18,7 @@ const FifthSection = () => {
       <Image
         src={"/img/logos/logo-branca-sem-nome.png"}
         alt="Logo branca BRC."
-        className="absolute -z-9 left-5 sm:bottom-auto sm:top-[4rem] lg:top-auto lg:bottom-[4rem] sm:left-auto right-[40px] opacity-15 lg:opacity-20"
+        className="absolute -z-9 left-5 sm:bottom-auto sm:top-[4rem] lg:top-auto lg:bottom-[4rem] sm:left-auto right-[40px] opacity-15 lg:opacity-20 h-[30px] w-auto"
         width={65}
         height={30}
       />
@@ -32,17 +34,25 @@ const FifthSection = () => {
         <div className="h-[80%]">
           <OfficeCarousel />
         </div>
-        <div className="grid gap-3 md:gap-6">
-          <h3 className="cor-background font-1-xl font-[400]">
-            Serviço jurídico exemplar presencialmente na Paraíba em Campina
-            Grande e Esperança<span className="cor-p2">.</span>
-          </h3>
-          <p className="font-1-s cor-6">
-            Descubra nossos escritórios em Campina Grande e Esperança, onde a
-            excelência jurídica se encontra com o atendimento personalizado.
-            Estamos aqui para servir e oferecer soluções eficazes para suas
-            necessidades legais.
-          </p>
+        <div className="grid justify-between h-full">
+          <div className="flex flex-col mb-6 md:mb-12">
+            <h3 className="cor-background font-1-xl font-[400] mb-3 md:mb-6">
+              Serviço jurídico exemplar presencialmente na Paraíba em Campina
+              Grande e Esperança<span className="cor-p2">.</span>
+            </h3>
+            <p className="font-1-s cor-6">
+              Descubra nossos escritórios em Campina Grande e Esperança, onde a
+              excelência jurídica se encontra com o atendimento personalizado.
+              Estamos aqui para servir e oferecer soluções eficazes para suas
+              necessidades legais.
+            </p>
+          </div>
+          <Link
+            href={"/contato"}
+            className="pl-[1px] font-1-xs self-center py-0 poppins font-semibold cursor-pointer bg-transparent cor-p2 hover:bg-transparent rounded-2xl max-h-fit max-w-fit duration-200 relative animatedUnderline flex gap-2 items-center after:min-w-full lg:after:min-w-0"
+          >
+            Agende uma consulta presencial! <MoveRight width={16} height={16} />
+          </Link>
         </div>
       </div>
     </section>
