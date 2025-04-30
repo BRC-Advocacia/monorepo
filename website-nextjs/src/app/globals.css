@@ -136,6 +136,10 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+.animatedUnderline {
+  @apply after:border-b after:border-b-current after:h-[1px] after:absolute after:bottom-1 after:w-0 hover:after:w-full after:duration-200;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
