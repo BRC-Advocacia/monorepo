@@ -11,19 +11,20 @@ const HeaderLogo = () => {
         <Image
           priority
           src={"/img/logos/logo-branca-sem-nome.png"}
+          className="w-[40px]"
           width={40}
-          height={50}
+          height={40}
           alt="BRC logo"
-          sizes="15vw"
+          style={{ width: "auto", height: "auto" }}
         />
       ) : (
         <Image
           priority
           src={"/img/logos/logo-branca.png"}
           width={130}
-          height={60}
+          height={54}
           alt="BRC Logo completa"
-          sizes="15vw"
+          style={{ width: "auto", height: "auto" }}
         />
       )}
     </>
