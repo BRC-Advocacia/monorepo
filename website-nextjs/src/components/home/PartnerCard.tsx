@@ -18,7 +18,7 @@ const PartnerCard = ({ partner }: { partner: PartnerProps }) => {
         <Image
           src={partner.image || "/img/socios/placeholder.jpg"}
           alt={`Imagem do sócio ${partner.name}.`}
-          className="absolute -z-80 top-0 left-0 h-full w-full object-cover rounded-2xl"
+          className="absolute -z-80 top-0 left-0 h-full w-full object-cover sm:object-top rounded-2xl"
           width={360}
           height={600}
         />
