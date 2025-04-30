@@ -40,7 +40,6 @@ const PartnersCarousel = () => {
   return (
     <>
       {isMobile ? (
-        // Mobile: Carousel
         <Carousel className="w-full">
           <CarouselContent>
             {partners.map((partner, index) => (
@@ -55,7 +54,6 @@ const PartnersCarousel = () => {
           </div>
         </Carousel>
       ) : (
-        // Desktop: Grid
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {partners.map((partner, index) => (
             <PartnerCard key={index} partner={partner} />
