@@ -14,8 +14,8 @@ const ThridSection = () => {
         sizes="100vh"
       />
       <div className="absolute top-0 h-full left-0 right-0 bg-slate-800/90 z-[-9]" />
-      <div className="py-[4rem] w-full h-full px-5 md:px-10 flex flex-col top-0">
-        <div className="mb-10 lg:mb-15">
+      <div className="py-[4rem] w-full h-full px-5 md:px-10 flex flex-col top-0 gap-6">
+        <div>
           <p className="fadeInDown font-1-m cor-4 text-center sm:text-start">
             PLANO ESTRATÉGICO E ESPECIALIZADO
           </p>
