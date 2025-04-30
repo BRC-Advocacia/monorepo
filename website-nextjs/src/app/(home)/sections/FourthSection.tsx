@@ -1,5 +1,4 @@
 import PartnersCarousel from "@/components/home/PartnersCarousel";
-import React from "react";
 
 const FourthSection = () => {
   return (

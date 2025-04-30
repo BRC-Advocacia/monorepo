@@ -2,7 +2,6 @@ import OfficeCarousel from "@/components/home/OfficeCarousel";
 import { MoveRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const FifthSection = () => {
   return (

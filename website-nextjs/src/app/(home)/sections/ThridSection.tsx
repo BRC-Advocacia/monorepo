@@ -1,6 +1,5 @@
 import { AreaCarousel } from "@/components/home/CardCarousel";
 import Image from "next/image";
-import React from "react";
 
 const ThridSection = () => {
   return (
