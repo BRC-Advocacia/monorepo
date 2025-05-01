@@ -27,7 +27,7 @@ const FifthSection = () => {
           ATENDIMENTO EM TODO O BRASIL
         </p>
         <h2 className="cor-0 font-3-xxl text-center sm:text-start">
-          nossos escritórios<span className="cor-p5">.</span>
+          nossa estrutura<span className="cor-p5">.</span>
         </h2>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6 items-start">
