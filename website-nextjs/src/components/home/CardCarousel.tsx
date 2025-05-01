@@ -123,7 +123,7 @@ const areasAtuacao: AreaProps[] = [
 
 export function AreaCarousel() {
   return (
-    <div className="w-full max-w-[1400px] mx-auto px-2 sm:px-4">
+    <div className="w-full mx-auto ">
       <Carousel
         opts={{
           align: "start",
@@ -146,7 +146,7 @@ export function AreaCarousel() {
               </CarouselItem>
             ))}
         </CarouselContent>
-        <div className="flex justify-center sm:justify-end gap-2 mt-8">
+        <div className="flex justify-end mr-8 sm:justify-end gap-2 mt-8">
           <CarouselPrevious className="static transform-none h-12 w-12 cursor-pointer disabled:cursor-auto bg-(--azul-escuro) hover:bg-(--azul-escuro)/90 hover:text-(--cor-p2) text-(--cor-p1) border-(--cor-p1)" />
           <CarouselNext className="static transform-none h-12 w-12 cursor-pointer disabled:cursor-auto bg-(--azul-escuro) hover:bg-(--azul-escuro)/90 hover:text-(--cor-p2) text-(--cor-p1) border-(--cor-p1)" />
         </div>
