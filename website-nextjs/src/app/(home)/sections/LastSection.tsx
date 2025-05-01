@@ -16,7 +16,7 @@ const LastSection = async () => {
       <div className="absolute top-0 h-full left-0 right-0 bg-(--cor-p1)/80 z-[-9]" />
 
       <div className="flex flex-col">
-        <p className="fadeInDown font-1-m cor-9 text-center sm:text-start ml-0 sm:ml-1">
+        <p className="fadeInDown font-1-m background text-center sm:text-start ml-0 sm:ml-1">
           ESCOLHA O MELHOR PARA VOCÊ
         </p>
         <h2 className="font-3-xxl cor-azul-escuro text-center sm:text-start">
@@ -78,7 +78,7 @@ const LastSection = async () => {
         <Image
           src={"/img/logos/logo-azul-sem-nome.png"}
           alt="Logo azul BRC Advogados."
-          className="mx-auto opacity-15 lg:opacity-20"
+          className="mx-auto opacity-15 lg:opacity-50 pl-2"
           width={65}
           height={30}
           style={{ height: "auto", width: "auto" }}
