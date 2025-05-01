@@ -6,6 +6,9 @@ import Link from "next/link";
 import FourthSection from "./sections/FourthSection";
 import FifthSection from "./sections/FifthSection";
 import LastSection from "./sections/LastSection";
+import { homePageMetadata } from "@/config/metadata";
+
+export const metadata = homePageMetadata;
 
 export default async function Home() {
   return (

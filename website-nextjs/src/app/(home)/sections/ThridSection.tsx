@@ -13,7 +13,7 @@ const ThridSection = () => {
         className="w-screen h-full blur-[4px] object-cover object-top absolute top-0 z-[-10]"
         sizes="100vh"
       />
-      <div className="absolute top-0 h-full left-0 right-0 bg-slate-800/90 z-[-9]" />
+      <div className="absolute top-0 h-full left-0 right-0 bg-(--azul-escuro)/90 z-[-9]" />
       <div className="py-[4rem] w-full h-full px-5 md:px-10 flex flex-col top-0 gap-6">
         <div>
           <p className="fadeInDown font-1-m cor-4 text-center sm:text-start ml-0 sm:ml-1">

@@ -13,7 +13,7 @@ const FifthSection = () => {
         height={1200}
         className="absolute h-full blur-[4px] w-screen top-0 left-0 object-cover -z-14"
       />
-      <div className="absolute top-0 h-full left-0 right-0 bg-slate-800/90 -z-10" />
+      <div className="absolute top-0 h-full left-0 right-0 bg-(--azul-escuro)/90 -z-10" />
       <Image
         src={"/img/logos/logo-branca-sem-nome.png"}
         alt="Logo branca BRC."

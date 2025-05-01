@@ -2,7 +2,6 @@ import { Poppins, Roboto, Antic_Didone } from "next/font/google";
 import "./globals.css";
 import "./typography.css";
 import "./colors.css";
-import { homePageMetadata } from "@/config/metadata";
 import ScrollHeader from "@/components/global/ScrollHeader";
 
 const roboto = Roboto({
@@ -22,8 +21,6 @@ const antic = Antic_Didone({
   subsets: ["latin"],
   weight: ["400"],
 });
-
-export const metadata = homePageMetadata;
 
 export default function RootLayout({
   children,
