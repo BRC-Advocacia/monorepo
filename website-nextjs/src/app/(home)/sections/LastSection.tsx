@@ -10,17 +10,17 @@ const LastSection = async () => {
         src={"/img/home/atuacao-bg.jpeg"}
         width={1200}
         height={1200}
-        className="w-screen h-full blur-[4px] object-cover object-top absolute left-0 top-0 z-[-10]"
+        className="w-screen h-full blur-[4px] object-cover object-top absolute left-0 top-0 z-[-10] opacity-70"
         sizes="100vh"
       />
-      <div className="absolute top-0 h-full left-0 right-0 bg-(--cor-p2)/80 z-[-9]" />
+      <div className="absolute top-0 h-full left-0 right-0 bg-(--cor-p1)/80 z-[-9]" />
 
       <div className="flex flex-col">
         <p className="fadeInDown font-1-m cor-9 text-center sm:text-start ml-0 sm:ml-1">
           ESCOLHA O MELHOR PARA VOCÊ
         </p>
         <h2 className="font-3-xxl cor-azul-escuro text-center sm:text-start">
-          fale conosco<span className="cor-p5">.</span>
+          fale conosco<span className="cor-background">.</span>
         </h2>
       </div>
       <div className="grid grid-cols-1 relative">
