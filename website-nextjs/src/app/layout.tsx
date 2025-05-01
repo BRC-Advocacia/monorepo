@@ -3,7 +3,7 @@ import "./globals.css";
 import "./typography.css";
 import "./colors.css";
 import { homePageMetadata } from "@/config/metadata";
-import Header from "@/components/global/Header";
+import ScrollHeader from "@/components/global/ScrollHeader";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -35,7 +35,7 @@ export default function RootLayout({
       <body
         className={`${antic.variable} ${roboto.variable} ${poppins.variable} antialiased`}
       >
-        <Header />
+        <ScrollHeader />
         {children}
       </body>
     </html>
