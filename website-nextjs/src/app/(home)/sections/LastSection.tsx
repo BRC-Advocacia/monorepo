@@ -77,7 +77,7 @@ const LastSection = async () => {
         </div>
         <Image
           src={"/img/logos/logo-azul-sem-nome.png"}
-          alt="Logo branca BRC."
+          alt="Logo azul BRC Advogados."
           className="mx-auto opacity-15 lg:opacity-20"
           width={65}
           height={30}
