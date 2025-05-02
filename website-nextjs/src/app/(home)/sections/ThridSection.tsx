@@ -1,7 +1,7 @@
 import { AreaCarousel } from "@/components/home/CardCarousel";
 import Image from "next/image";
 
-const ThridSection = () => {
+const ThridSection = async () => {
   return (
     <section className="relative h-auto">
       <Image

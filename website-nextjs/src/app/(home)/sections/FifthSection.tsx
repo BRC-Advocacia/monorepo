@@ -3,7 +3,7 @@ import { MoveRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const FifthSection = () => {
+const FifthSection = async () => {
   return (
     <section className="flex flex-col gap-6 px-5 py-[4rem] md:px-10 max-h-auto relative h-auto">
       <Image

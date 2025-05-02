@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const SecondSection = () => {
+const SecondSection = async () => {
   return (
     <section className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] gap-6 px-5 md:px-10 relative max-h-auto">
       <div className="pt-[4rem]">

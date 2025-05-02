@@ -1,6 +1,6 @@
 import PartnersCarousel from "@/components/home/PartnersCarousel";
 
-const FourthSection = () => {
+const FourthSection = async () => {
   return (
     <section className="flex flex-col gap-6 px-5 md:px-10 relative max-h-auto py-[4rem]">
       <div>
