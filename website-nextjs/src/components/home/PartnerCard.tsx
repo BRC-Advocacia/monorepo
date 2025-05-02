@@ -9,6 +9,7 @@ export type PartnerProps = {
   linkedinUrl: string;
   specialties: string[];
   highlight: string;
+  href: string;
 };
 
 const PartnerCard = ({ partner }: { partner: PartnerProps }) => {
@@ -56,9 +57,12 @@ const PartnerCard = ({ partner }: { partner: PartnerProps }) => {
           </div>
           <div>
             <p className="cor-2 font-[400] text-sm">{partner.highlight}</p>
-            <button className="flex items-center bg-transparent poppins cor-4 gap-2 cursor-pointer underline group mt-6">
+            <Link
+              href={partner.href}
+              className="flex items-center bg-transparent poppins cor-4 gap-2 cursor-pointer underline group mt-6"
+            >
               Conheça <MoveRight width={12} height={12} />
-            </button>
+            </Link>
           </div>
         </CardContent>
       </div>
