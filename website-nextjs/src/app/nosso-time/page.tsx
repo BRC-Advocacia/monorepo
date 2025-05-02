@@ -28,7 +28,7 @@ export default function Page() {
           </p>
         </div>
       </section>
-      <section className="flex flex-col px-5 md:px-10 py-[4rem] gap-6">
+      <section className="flex flex-col px-5 md:px-10 py-[4rem] gap-[4rem]">
         {partners.map((partner) => (
           <PartnerSection key={partner.name} partner={partner} />
         ))}

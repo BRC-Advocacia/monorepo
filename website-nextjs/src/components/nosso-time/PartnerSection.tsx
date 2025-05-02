@@ -2,9 +2,21 @@ import { PartnerProps } from "@/data/Partners";
 import Image from "next/image";
 import Link from "next/link";
 
+function padronizeText(texto: string) {
+  return texto
+    .trim()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .split(" ")[1]
+    .toLowerCase();
+}
+
 export default function PartnerSection({ partner }: { partner: PartnerProps }) {
   return (
-    <div className="grid grid-cols-[390px_3fr] gap-[4rem]">
+    <div
+      id={padronizeText(partner.name)}
+      className="grid grid-cols-[390px_3fr] gap-[4rem] min-h-[600px] max-h-[800px]"
+    >
       <div className="flex flex-col">
         <Image
           src={partner.image.replace("-none", "").replace("png", "jpg")}
