@@ -11,7 +11,7 @@ import {
 } from "../ui/carousel";
 import PartnerCardMobile from "./PartnerCardMobile";
 
-const partners: PartnerProps[] = [
+export const partners: PartnerProps[] = [
   {
     name: "Francian Batista",
     image: "/img/socios/batista-none.png",
