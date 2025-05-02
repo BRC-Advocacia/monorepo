@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Card, CardContent, CardTitle } from "../ui/card";
 import Link from "next/link";
 import { BookmarkCheck, MoveRight } from "lucide-react";
-import { PartnerProps } from "./PartnerCard";
+import { PartnerProps } from "@/data/Partners";
 
 const PartnerCardMobile = ({ partner }: { partner: PartnerProps }) => {
   return (
