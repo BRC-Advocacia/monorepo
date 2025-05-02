@@ -16,7 +16,7 @@ const LastSection = async () => {
       <div className="absolute top-0 h-full left-0 right-0 bg-(--cor-p1)/80 z-[-9]" />
 
       <div className="flex flex-col">
-        <p className="fadeInDown font-1-m background text-center sm:text-start ml-0 sm:ml-1">
+        <p className="fadeInDown font-1-m text-center sm:text-start ml-0 sm:ml-1">
           ESCOLHA O MELHOR PARA VOCÊ
         </p>
         <h2 className="font-3-xxl cor-azul-escuro text-center sm:text-start">
