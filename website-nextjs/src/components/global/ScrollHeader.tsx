@@ -30,7 +30,8 @@ export default function ScrollHeader() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 bg-(--azul-escuro)/50 z-50 transition-transform container-x py-6 flex justify-between items-center shadow-sm duration-300 max-h-[80px]",
-        isVisible ? "translate-y-0" : "-translate-y-full"
+        isVisible ? "translate-y-0" : "-translate-y-full",
+        lastScrollY < 10 && "bg-(--azul-escuro)/0 shadow-none transition"
       )}
     >
       <HeaderLogo />
