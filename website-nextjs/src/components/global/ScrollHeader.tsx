@@ -29,7 +29,7 @@ export default function ScrollHeader() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 bg-(--azul-escuro)/50 z-50 transition-transform container-x py-6 flex justify-between items-center shadow-sm duration-300",
+        "fixed top-0 left-0 right-0 bg-(--azul-escuro)/50 z-50 transition-transform container-x py-6 flex justify-between items-center shadow-sm duration-300 max-h-[80px]",
         isVisible ? "translate-y-0" : "-translate-y-full"
       )}
     >
