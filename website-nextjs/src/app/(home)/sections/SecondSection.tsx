@@ -21,7 +21,7 @@ const SecondSection = () => {
       </div>
       <div className="pb-[4rem] lg:py-[4rem] flex justify-end self-center">
         <Image
-          className="rounded-2xl w-full object-cover"
+          className="rounded-lg w-full object-cover"
           width={1024}
           height={732}
           src="/img/quem-somos/3-socios.jpg"
