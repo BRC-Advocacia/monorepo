@@ -2,14 +2,7 @@ import Image from "next/image";
 import { Card, CardContent, CardTitle } from "../ui/card";
 import Link from "next/link";
 import { BookmarkCheck, MoveRight } from "lucide-react";
-
-export type PartnerProps = {
-  name: string;
-  image: string;
-  linkedinUrl: string;
-  specialties: string[];
-  highlight: string;
-};
+import { PartnerProps } from "./PartnerCard";
 
 const PartnerCardMobile = ({ partner }: { partner: PartnerProps }) => {
   return (
@@ -59,9 +52,12 @@ const PartnerCardMobile = ({ partner }: { partner: PartnerProps }) => {
           </div>
           <div>
             <p className="cor-2 font-[400] text-sm">{partner.highlight}</p>
-            <button className="flex items-center bg-transparent poppins cor-4 gap-2 cursor-pointer underline group mt-6">
+            <Link
+              href={partner.href}
+              className="flex items-center bg-transparent poppins cor-4 gap-2 cursor-pointer underline group mt-6"
+            >
               Conheça <MoveRight width={12} height={12} />
-            </button>
+            </Link>
           </div>
         </CardContent>
       </div>
