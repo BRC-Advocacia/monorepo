@@ -1,7 +1,7 @@
 import PrimaryButton from "@/components/PrimaryButton";
 import Image from "next/image";
 
-const FirstSection = () => {
+const FirstSection = async () => {
   return (
     <section className="min-h-[600px] h-screen flex justify-center relative">
       <Image
