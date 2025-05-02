@@ -1,10 +1,10 @@
-import { partners } from "@/components/home/PartnersCarousel";
 import PartnerSection from "@/components/nosso-time/PartnerSection";
+import { partners } from "@/data/Partners";
 import Image from "next/image";
 
 export default function Page() {
   return (
-    <main className="min-h-[600px] h-screen pt-[134px] pb-[4rem] px-5 md:px-10 flex relative overflow-hidden">
+    <main className="min-h-[600px] h-screen pt-[134px] pb-[4rem] px-5 md:px-10 flex flex-col relative overflow-hidden">
       <Image
         src={"/img/home/office-pic.jpg"}
         alt="Imagem de fundo da seção 'nossos escritórios' do site BRC."
@@ -26,7 +26,7 @@ export default function Page() {
           com integridade e dedicação.
         </p>
       </div>
-      <section className="flex flex-col">
+      <section className="flex">
         {partners.map((partner) => (
           <PartnerSection key={partner.name} partner={partner} />
         ))}
