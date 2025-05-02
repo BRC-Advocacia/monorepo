@@ -18,6 +18,7 @@ const partners: PartnerProps[] = [
     linkedinUrl: "https://www.linkedin.com/in/francian-batista-7541411aa/",
     specialties: ["Empresarial", "Tributário", "Societário"],
     highlight: "🌟 Coordenador de Comissões OAB/CG",
+    href: "/nosso-time/#batista",
   },
   {
     name: "Felipe Ramos",
@@ -25,6 +26,7 @@ const partners: PartnerProps[] = [
     linkedinUrl: "https://www.linkedin.com/in/felipebramos/",
     specialties: ["Cível", "Família", "Imobiliário"],
     highlight: "🌟 Ouvidor Geral OAB/CG",
+    href: "/nosso-time/#ramos",
   },
   {
     name: "Thiago Câmara",
@@ -32,6 +34,7 @@ const partners: PartnerProps[] = [
     linkedinUrl: "https://www.instagram.com/advthiagocamara/",
     specialties: ["Consumidor", "Trabalhista"],
     highlight: "🌟 Procurador do PROCON de Esperança",
+    href: "/nosso-time/#camara",
   },
 ];
 
