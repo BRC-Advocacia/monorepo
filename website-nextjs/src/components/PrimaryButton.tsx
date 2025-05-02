@@ -15,7 +15,7 @@ const PrimaryButton: React.FC<TPrimaryButton> = ({
   return (
     <Link
       href={href}
-      className="py-3 px-6 poppins text-xl cor-azul-escuro bg-(--cor-p2) rounded flex gap-2 mt-10 shadow shadow-slate-900 items-center"
+      className="py-3 px-8 poppins text-xl cor-azul-escuro bg-(--cor-p2) flex gap-2 mt-10 shadow shadow-slate-900 items-center rounded-full"
     >
       {children}
       {src && (

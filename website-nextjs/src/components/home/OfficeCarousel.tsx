@@ -18,20 +18,20 @@ const officePicturesSrc = [
 const OfficeCarousel = () => {
   return (
     <Carousel
-      className="mx-auto lg:mx-0 w-full lg:w-[90%]  relative rounded-2xl mb-8 md:mb-16 lg:mb-0"
+      className="mx-auto lg:mx-0 w-full lg:w-[90%]  relative mb-8 md:mb-16 lg:mb-0"
       opts={{
         align: "start",
         slidesToScroll: 1,
       }}
     >
-      <CarouselContent className="rounded-2xl h-[80%]">
+      <CarouselContent className="h-[80%]">
         {officePicturesSrc.map((src, index) => (
           <CarouselItem
             key={index}
-            className={`h-full rounded-2xl overflow-hidden p-2 pl-4`}
+            className={`h-full overflow-hidden p-2 pl-4`}
           >
             <Image
-              className="flex items-center justify-center w-full rounded-2xl h-[500px] lg:h-[500px] object-cover"
+              className="flex items-center justify-center w-full rounded-lg h-[500px] object-cover"
               src={src}
               alt="Foto do escritório BRC"
               width={600}

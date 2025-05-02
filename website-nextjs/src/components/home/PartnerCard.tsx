@@ -13,17 +13,17 @@ export type PartnerProps = {
 
 const PartnerCard = ({ partner }: { partner: PartnerProps }) => {
   return (
-    <Card className="bg-transparent px-6 py-8 relative min-h-[550px] gap-0 w-full">
+    <Card className="bg-transparent px-6 py-8 relative min-h-[550px] gap-0 w-full overflow-hidden">
       <div>
         <Image
           src={partner.image || "/img/socios/placeholder.jpg"}
           alt={`Imagem do sócio ${partner.name}.`}
-          className="absolute -z-80 top-0 left-0 h-full w-full object-cover sm:object-top rounded-2xl"
+          className="absolute -z-80 top-0 left-0 h-full w-full object-cover sm:object-top rounded-lg"
           width={360}
           height={600}
         />
-        <div className="bg-gradient-to-br from-(--azul-escuro)/95 to-(--cor-12)/90 absolute -z-100 top-0 left-0 right-0 bottom-0 rounded-2xl" />
-        <div className="bg-gradient-to-br from-(--azul-escuro)/10 to-(--cor-12)/50 absolute -z-70 top-0 left-0 right-0 bottom-0 rounded-2xl" />
+        <div className="bg-gradient-to-br from-(--azul-escuro)/95 to-(--cor-12)/90 absolute -z-100 top-0 left-0 right-0 bottom-0 rounded-lg" />
+        <div className="bg-gradient-to-br from-(--azul-escuro)/10 to-(--cor-12)/50 absolute -z-70 top-0 left-0 right-0 bottom-0 rounded-lg" />
       </div>
       <div className="grow grid grid-cols-1 grid-rows-[auto_1fr]">
         <CardTitle className="m-0 p-0 flex flex-col md:flex-row justify-between md:items-center mb-4">
