@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import PartnerCard, { PartnerProps } from "./PartnerCard";
+import PartnerCard from "./PartnerCard";
 import useMedia from "@/hooks/useMedia";
 import {
   Carousel,
@@ -10,33 +10,7 @@ import {
   CarouselPrevious,
 } from "../ui/carousel";
 import PartnerCardMobile from "./PartnerCardMobile";
-
-export const partners: PartnerProps[] = [
-  {
-    name: "Francian Batista",
-    image: "/img/socios/batista-none.png",
-    linkedinUrl: "https://www.linkedin.com/in/francian-batista-7541411aa/",
-    specialties: ["Empresarial", "Tributário", "Societário"],
-    highlight: "🌟 Coordenador de Comissões OAB/CG",
-    href: "/nosso-time/#batista",
-  },
-  {
-    name: "Felipe Ramos",
-    image: "/img/socios/ramos-none.png",
-    linkedinUrl: "https://www.linkedin.com/in/felipebramos/",
-    specialties: ["Cível", "Família", "Imobiliário"],
-    highlight: "🌟 Ouvidor Geral OAB/CG",
-    href: "/nosso-time/#ramos",
-  },
-  {
-    name: "Thiago Câmara",
-    image: "/img/socios/camara-none.png",
-    linkedinUrl: "https://www.instagram.com/advthiagocamara/",
-    specialties: ["Consumidor", "Trabalhista"],
-    highlight: "🌟 Procurador do PROCON de Esperança",
-    href: "/nosso-time/#camara",
-  },
-];
+import { partners } from "@/data/Partners";
 
 const PartnersCarousel = () => {
   const isMobile = useMedia("(width<=1024px)");
