@@ -2,15 +2,7 @@ import Image from "next/image";
 import { Card, CardContent, CardTitle } from "../ui/card";
 import Link from "next/link";
 import { BookmarkCheck, MoveRight } from "lucide-react";
-
-export type PartnerProps = {
-  name: string;
-  image: string;
-  linkedinUrl: string;
-  specialties: string[];
-  highlight: string;
-  href: string;
-};
+import { PartnerProps } from "@/data/Partners";
 
 const PartnerCard = ({ partner }: { partner: PartnerProps }) => {
   return (
