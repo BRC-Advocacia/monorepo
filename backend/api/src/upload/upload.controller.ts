@@ -20,7 +20,7 @@ export class UploadController {
 
   @Post()
   @UseGuards(JwtAuthGuard)
-  @UseInterceptors(FileInterceptor('cover'))
+  @UseInterceptors(FileInterceptor('image'))
   async uploadFile(@UploadedFile() file) {
     if (!file) {
       throw new BadRequestException('file is required');

@@ -15,30 +15,38 @@ import {
   AlignLeft,
   AlignCenter,
   AlignRight,
-  CheckSquare,
   Highlighter,
 } from "lucide-react";
+import axios from "axios";
 
 interface EditorToolbarProps {
   editor: Editor | null;
 }
-// NOTE:
-// O processo atual é:
-// A imagem é convertida para base64 usando FileReader
-// O base64 é inserido diretamente no conteúdo do editor
-// A imagem é salva junto com o conteúdo do artigo no banco de dados
-// Isso tem algumas desvantagens:
-// O base64 aumenta significativamente o tamanho do conteúdo
-// Não há otimização de imagens
-// As imagens não são reutilizáveis
-// O banco de dados fica mais pesado
 export default function EditorToolbar({ editor }: EditorToolbarProps) {
   if (!editor) return null;
 
-  const addLink = () => {
-    const url = window.prompt("Digite a URL do link:");
-    if (url) {
-      editor.chain().focus().setLink({ href: url }).run();
+
+  const uploadImageToCloudinary = async (file: File) => {
+    try {
+      const formData = new FormData();
+      formData.append("image", file);
+
+      const token = localStorage.getItem("access_token");
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/upload`,
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      return response.data.url;
+    } catch (error) {
+      console.error("Erro ao fazer upload da imagem:", error);
+      throw new Error("Falha ao fazer upload da imagem");
     }
   };
 
@@ -154,18 +162,6 @@ export default function EditorToolbar({ editor }: EditorToolbarProps) {
           >
             <ListOrdered className="w-4 h-4" />
           </button>
-          <button
-            type="button"
-            onClick={() => editor.chain().focus().toggleTaskList().run()}
-            className={`p-2 rounded hover:text-zinc-700 cursor-pointer ${
-              editor.isActive("taskList")
-                ? "bg-blue-100 text-blue-600"
-                : "hover:bg-gray-200"
-            }`}
-            title="Lista de tarefas"
-          >
-            <CheckSquare className="w-4 h-4" />
-          </button>
         </div>
 
         <div className="flex items-center gap-1 border-r pr-2">
@@ -220,34 +216,20 @@ export default function EditorToolbar({ editor }: EditorToolbarProps) {
           >
             <Quote className="w-4 h-4" />
           </button>
-          <button
-            type="button"
-            onClick={addLink}
-            className={`p-2 rounded hover:text-zinc-700 cursor-pointer ${
-              editor.isActive("link")
-                ? "bg-blue-100 text-blue-600"
-                : "hover:bg-gray-200"
-            }`}
-            title="Adicionar link"
-          >
-            <LinkIcon className="w-4 h-4" />
-          </button>
           <input
             type="file"
             accept="image/*"
-            onChange={(e) => {
+            onChange={async (e) => {
               e.stopPropagation();
               const file = e.target.files?.[0];
               if (file) {
-                const reader = new FileReader();
-                reader.onload = () => {
-                  editor
-                    .chain()
-                    .focus()
-                    .setImage({ src: reader.result as string })
-                    .run();
-                };
-                reader.readAsDataURL(file);
+                try {
+                  const url = await uploadImageToCloudinary(file);
+                  editor.chain().focus().setImage({ src: url }).run();
+                } catch (error) {
+                  console.error("Erro ao fazer upload da imagem:", error);
+                  alert("Erro ao fazer upload da imagem. Por favor, tente novamente.");
+                }
               }
             }}
             className="hidden"

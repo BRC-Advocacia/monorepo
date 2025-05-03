@@ -30,7 +30,6 @@ export default function TiptapEditor({ content, onUpdate }: TiptapEditorProps) {
         },
       }),
       Image.configure({
-        allowBase64: true,
         HTMLAttributes: {
           class: "max-w-full h-auto rounded-lg",
         },

@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import { useState, useRef, ChangeEvent, useEffect } from "react";
 import axios from "axios";
@@ -31,18 +31,11 @@ export default function ArticleCoverUpload({
     setIsUploading(true);
     setError(null);
 
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setImagePreview(reader.result as string);
-    };
-    reader.readAsDataURL(file);
-
     try {
       const formData = new FormData();
-      formData.append("cover", file);
+      formData.append("image", file);
 
       const token = localStorage.getItem("access_token");
-
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_API_URL}/api/upload`,
         formData,
