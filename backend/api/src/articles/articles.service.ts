@@ -29,6 +29,9 @@ export class ArticlesService {
   async findAll(): Promise<Article[]> {
     const articles = await this.articlesRepository.find({
       relations: ['author'],
+      order: {
+        created_at: 'DESC'
+      }
     });
     return articles.map((article) => {
       if (article.coverImage && !article.coverImage.startsWith('http')) {

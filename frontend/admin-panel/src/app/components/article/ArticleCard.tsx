@@ -84,11 +84,6 @@ export function ArticleCard({
       <CardHeader>
         <CardTitle className="text-gray-900">{title}</CardTitle>
         <CardDescription className="flex grow">
-          {/* {article?.content && ( */}
-          {/* // <div className="prose max-w-none"> */}
-          {/* <EditorContent editor={editor} /> */}
-          {/* </div> */}
-          {/* //   )} */}
           {article?.subtitle && (
             <div className="prose max-w-none">{article?.subtitle}</div>
           )}
