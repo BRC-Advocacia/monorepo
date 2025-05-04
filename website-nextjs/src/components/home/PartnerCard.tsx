@@ -16,7 +16,7 @@ const PartnerCard = ({ partner }: { partner: PartnerProps }) => {
           height={600}
         />
         <div className="bg-gradient-to-br from-(--azul-escuro)/95 to-(--cor-12)/90 absolute -z-100 top-0 left-0 right-0 bottom-0 rounded-lg" />
-        <div className="bg-gradient-to-br from-(--azul-escuro)/10 to-(--cor-12)/50 absolute -z-70 top-0 left-0 right-0 bottom-0 rounded-lg" />
+        <div className="bg-gradient-to-br from-(--azul-escuro)/10 to-(--cor-12)/10 absolute -z-70 top-0 left-0 right-0 bottom-0 rounded-lg" />
       </div>
       <div className="grow grid grid-cols-1 grid-rows-[auto_1fr]">
         <CardTitle className="m-0 p-0 flex flex-col md:flex-row justify-between md:items-center mb-4">
