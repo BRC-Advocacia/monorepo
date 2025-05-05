@@ -14,14 +14,6 @@ const FifthSection = async () => {
         className="absolute h-full blur-[4px] w-screen top-0 left-0 object-cover -z-14"
       />
       <div className="absolute top-0 h-full left-0 right-0 bg-(--azul-escuro)/90 -z-10" />
-      <Image
-        src={"/img/logos/logo-branca-sem-nome.png"}
-        alt="Logo branca BRC."
-        className="absolute -z-9 left-5 sm:bottom-auto sm:top-[4rem] lg:top-auto lg:bottom-[4rem] sm:left-auto right-[40px] opacity-15 lg:opacity-20 h-[30px] w-auto"
-        width={65}
-        height={30}
-        style={{ height: "auto", width: "auto" }}
-      />
       <div>
         <p className="fadeInDown font-1-m cor-4 text-center sm:text-start ml-0 sm:ml-1">
           ATENDIMENTO EM TODO O BRASIL
