@@ -3,7 +3,7 @@ import PartnerCard from "@/components/nosso-time/PartnerCard";
 
 export default function Page() {
   return (
-    <section
+    <main
       className={
         "flex flex-col px-5 md:px-10 py-[4rem] gap-[4rem] bg-(--azul-escuro) relative bg-gradient-to-r from-(--azul-escuro)/100 to-(--cor-11)/100"
       }
@@ -20,6 +20,6 @@ export default function Page() {
           <PartnerCard partner={partner} />
         </div>
       ))}
-    </section>
+    </main>
   );
 }
