@@ -20,7 +20,6 @@ export default function Page() {
 
         {partners.map((partner) => (
           <div key={partner.name}>
-            {/* <PartnerSection partner={partner} /> */}
             <PartnerCard partner={partner} />
           </div>
         ))}
