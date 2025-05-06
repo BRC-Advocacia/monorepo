@@ -23,7 +23,7 @@ export default async function Home() {
         className="hidden md:flex items-center gap-4 fixed bottom-10 right-17"
         href="/contato"
       >
-        <p className="font-1-s cor-0 bg-slate-800 py-[6px] px-[8px] rounded-[8px]">
+        <p className="font-1-s cor-0 bg-(--azul-escuro) py-[6px] px-[8px] rounded-[8px]">
           Vamos conversar
         </p>
         <Image
