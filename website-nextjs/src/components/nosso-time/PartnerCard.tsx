@@ -14,22 +14,17 @@ const PartnerCard = ({ partner }: { partner: PartnerProps }) => {
         "bg-gradient-to-br from-(--azul-escuro)/100 to-(--cor-11)/100"
       )}
     >
-      <div
-        className={cn(
-          "h-full flex flex-col items-center",
-          "absolute bottom-0 right-0 -z-0"
-        )}
-      >
+      <div className={"h-full absolute bottom-0 right-0 -z-0 flex items-end"}>
         <Image
           src={
             // partner.image.replace("-none", "").replace("png", "jpg") ||
             partner.image || "/img/socios/placeholder.jpg"
           }
           alt={`Imagem do sócio ${partner.name}.`}
-          className={cn(
-            "h-full w-auto object-cover sm:object-top rounded-lg opacity-30 md:opacity-40 lg:opacity-100"
-          )}
-          width={360}
+          className={
+            "h-full object-cover sm:object-top rounded-lg opacity-30 md:opacity-40 lg:opacity-100"
+          }
+          width={480}
           height={600}
         />
       </div>
