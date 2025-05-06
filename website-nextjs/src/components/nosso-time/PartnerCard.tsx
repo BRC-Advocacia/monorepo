@@ -10,8 +10,7 @@ const PartnerCard = ({ partner }: { partner: PartnerProps }) => {
   return (
     <Card
       className={cn(
-        "px-6 py-8 min-h-[600px] mx-auto max-w-[1000px] gap-0 w-full rounded-lg border-none relative",
-        "bg-(--background)",
+        "px-6 py-8 min-h-[600px] mx-auto max-w-[1000px] gap-0 w-full rounded-lg border-none relative bg-(--background)",
         "bg-gradient-to-br from-(--azul-escuro)/100 to-(--cor-11)/100"
       )}
     >
