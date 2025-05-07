@@ -4,7 +4,7 @@ const SecondSection = async () => {
   return (
     <section className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] gap-6 px-5 md:px-10 relative max-h-auto">
       <div className="pt-[4rem]">
-        <div className="mb-5 lg:mb-10">
+        <div className="mb-6">
           <p className="fadeInDown font-1-m cor-6 text-center sm:text-start ml-0 sm:ml-1">
             RESPONSABILIDADE E TRANSPARÊNCIA
           </p>
@@ -12,12 +12,21 @@ const SecondSection = async () => {
             quem somos<span className="cor-p5">.</span>
           </h2>
         </div>
-        <p className="font-1-s cor-azul-escuro text-center sm:text-start ml-0 sm:ml-1">
-          Um escritório que alinha tradição e inovação para fornecer soluções
-          jurídicas excepcionais. Fundado com o compromisso de oferecer serviços
-          jurídicos de excelência, nosso escritório tem uma orgulhosa história
-          de sucesso e dedicação ao atendimento de nossos clientes.
-        </p>
+        <div className="flex flex-col gap-4">
+          <p className="font-1-s cor-azul-escuro text-center sm:text-start ml-0 sm:ml-1">
+            Um escritório que alinha tradição e inovação para fornecer soluções
+            jurídicas excepcionais. Fundado com o compromisso de oferecer
+            serviços jurídicos de excelência, nosso escritório tem uma orgulhosa
+            história de sucesso e dedicação ao atendimento de nossos clientes.
+          </p>
+          <p className="font-1-s cor-azul-escuro text-center sm:text-start ml-0 sm:ml-1">
+            Fazendo uso da praticidade tecnológica e pensando na comodidade dos
+            clientes, nosso time desenvolveu ferramentas especiais para a
+            realização de um atendimento a distância de alto nível, o que
+            possibilita uma maior celeridade na busca das melhores soluções dos
+            conflitos.
+          </p>
+        </div>
       </div>
       <div className="pb-[4rem] lg:py-[4rem] flex justify-end self-center">
         <Image
