@@ -21,7 +21,7 @@ export default async function Home() {
       <LastSection />
       <Link
         className="hidden md:flex items-center gap-4 fixed bottom-10 right-17"
-        href="/contato"
+        href="https://wa.me/5583981049965?text=Ol%C3%A1%2C%20vim%20pelo%20site!!"
       >
         <p className="font-1-s cor-0 bg-(--azul-escuro) py-[6px] px-[8px] rounded-[8px]">
           Vamos conversar
