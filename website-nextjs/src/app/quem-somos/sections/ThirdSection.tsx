@@ -6,14 +6,14 @@ const ThirdSection = () => {
   return (
     <section
       className={cn(
-        "py-[4rem] text-center px-5 md:px-10"
+        "py-[4rem] text-center px-5 md:px-10 text-(--azul-escuro)"
         // "bg-gradient-to-b from-(--azul-escuro)/100 to-(--cor-11)/100"
       )}
     >
-      <h2 className="cor-0 font-1-xl mb-4">
+      <h2 className="font-1-xl mb-4">
         advocacia real e personalizada<span className="cor-p5">.</span>
       </h2>
-      <p className="max-w-[50ch] cor-6 font-2-l mx-auto text-(--azul-escuro)/80">
+      <p className="max-w-[50ch] font-2-l mx-auto text-(--azul-escuro)/50">
         Nosso escritório traz consigo a proposta de uma advocacia moderna e sem
         fronteiras.
       </p>
