@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { CalendarCheck2 } from "lucide-react";
+import { CalendarCheck2, Radar } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,9 +18,9 @@ const FourthSection = () => {
         <h1 className="font-3-xxl text-center sm:text-start mb-6">
           princípios norteadores<span className="cor-p5">.</span>
         </h1>
-        <div className="grid grid-cols-2 gap-6 justify-between">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-between">
           <div>
-            <blockquote className="max-w-[60ch] font-1-s cor-6 mb-2">
+            <blockquote className="max-w-[60ch] font-1-s cor-6 mb-6">
               Nossa <span className="font-bold">missão</span> é apresentar
               soluções aos clientes com celeridade, ética e expertise.
             </blockquote>
@@ -35,7 +35,7 @@ const FourthSection = () => {
             width={248}
             height={248}
             alt="BRC Logo"
-            className="mx-auto"
+            className="mx-auto hidden md:block"
             src={"/img/logos/logo-branca-sem-nome.png"}
           />
         </div>
@@ -45,40 +45,40 @@ const FourthSection = () => {
           href={
             "https://wa.me/5583981049965?text=Quero%20agendar%20uma%20reunião.%20Vim%20pelo%20site!!"
           }
-          className="font-1-s flex items-center bg-transparent poppins gap-2 cursor-pointer underline group mt-6"
+          className="font-1-s flex items-center bg-transparent poppins gap-2 cursor-pointer underline group mt-6 justify-center sm:justify-start"
         >
           Agendar uma consulta <CalendarCheck2 width={12} height={12} />
         </Link>
       </div>
-      {/* <div className="flex flex-col items-center sm:items-start">
+      <div className="flex flex-col items-center sm:items-start">
         <h3 className="font-1-xl mb-4 flex gap-2 justify-between items-center w-full">
           <span>Valores</span>
           <Radar className="-rotate-45" width={36} height={36} />
         </h3>
-        <ul className="font-1-xs flex flex-wrap gap-1 cor-1">
-          <li className="grow bg-(--azul-escuro) rounded-lg p-4">
+        <ul className="font-1-xs gap-1 cor-1 text-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full">
+          <li className="grow bg-(--azul-escuro) rounded-lg p-4 flex items-center justify-center">
             Ética e transparência
           </li>
-          <li className="grow bg-(--azul-escuro) rounded-lg p-4">
+          <li className="grow bg-(--azul-escuro) rounded-lg p-4 flex items-center justify-center">
             Expertise e capacitação contínua
           </li>
-          <li className="grow bg-(--azul-escuro) rounded-lg p-4">
+          <li className="grow bg-(--azul-escuro) rounded-lg p-4 flex items-center justify-center">
             Expertise e capacitação contínua
           </li>
-          <li className="grow bg-(--azul-escuro) rounded-lg p-4">
+          <li className="grow bg-(--azul-escuro) rounded-lg p-4 flex items-center justify-center">
             Inovação e criatividade
           </li>
-          <li className="grow bg-(--azul-escuro) rounded-lg p-4">
-            Posicionamento profissional e íntegro
-          </li>
-          <li className="grow bg-(--azul-escuro) rounded-lg p-4">
-            Liderança, proatividade e coragem
-          </li>
-          <li className="grow bg-(--azul-escuro) rounded-lg p-4">
+          <li className="grow bg-(--azul-escuro) rounded-lg p-4 flex items-center justify-center">
             Meritocracia
           </li>
+          <li className="grow bg-(--azul-escuro) rounded-lg p-4 flex items-center justify-center">
+            Liderança, proatividade e coragem
+          </li>
+          <li className="grow bg-(--azul-escuro) rounded-lg p-4 md:col-span-2 lg:col-span-3">
+            Posicionamento profissional e íntegro
+          </li>
         </ul>
-      </div> */}
+      </div>
     </section>
   );
 };
