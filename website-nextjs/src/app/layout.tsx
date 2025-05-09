@@ -3,6 +3,7 @@ import "./globals.css";
 import "./typography.css";
 import "./colors.css";
 import ScrollHeader from "@/components/global/ScrollHeader";
+import { ReactLenis } from "@/helpers/lenis";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -29,12 +30,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body
-        className={`${antic.variable} ${roboto.variable} ${poppins.variable} antialiased`}
-      >
-        <ScrollHeader />
-        {children}
-      </body>
+      <ReactLenis root>
+        <body
+          className={`${antic.variable} ${roboto.variable} ${poppins.variable} antialiased`}
+        >
+          <ScrollHeader />
+          {children}
+        </body>
+      </ReactLenis>
     </html>
   );
 }
