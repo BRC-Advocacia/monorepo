@@ -1,9 +1,15 @@
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { values } from "@/data/Partners";
+import { cn } from "@/lib/utils";
 
 const ThirdSection = () => {
   return (
-    <section className="py-[4rem] text-center px-5 md:px-10 bg-gradient-to-b from-(--azul-escuro)/100 to-(--cor-11)/100">
+    <section
+      className={cn(
+        "py-[4rem] text-center px-5 md:px-10"
+        // "bg-gradient-to-b from-(--azul-escuro)/100 to-(--cor-11)/100"
+      )}
+    >
       <h2 className="cor-0 font-1-xl mb-4">
         advocacia real e personalizada<span className="cor-p5">.</span>
       </h2>
