@@ -7,7 +7,7 @@ const SecondSection = async () => {
     <section className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr] gap-6 px-5 md:px-10 relative max-h-auto">
       <div className="pt-[4rem] py-0 lg:py-[4rem]">
         <div className="mb-6">
-          <p className="fadeInDown font-1-m cor-6 text-center sm:text-start ml-0 sm:ml-1">
+          <p className="font-1-m cor-6 text-center sm:text-start ml-0 sm:ml-1">
             RESPONSABILIDADE E TRANSPARÊNCIA
           </p>
           <h2 className="cor-azul-escuro font-3-xxl text-center sm:text-start">
