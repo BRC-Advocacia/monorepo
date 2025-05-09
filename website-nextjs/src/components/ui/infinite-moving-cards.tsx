@@ -94,7 +94,7 @@ export const InfiniteMovingCards = ({
               width={32}
               height={32}
               src={item.src}
-              alt="Sociedade de Advogados"
+              alt={`Logo representando ${item.name}`}
               className="w-[32px] h-[32px] mb-6"
             />
             <h3 className="cor-zul-escuro font-1-m-b mb-4 text-start">
