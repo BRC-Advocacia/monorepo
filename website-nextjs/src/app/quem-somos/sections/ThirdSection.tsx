@@ -6,8 +6,7 @@ const ThirdSection = () => {
   return (
     <section
       className={cn(
-        "py-[4rem] text-center px-5 md:px-10 text-(--azul-escuro)"
-        // "bg-gradient-to-b from-(--azul-escuro)/100 to-(--cor-11)/100"
+        "pt-[2rem] pb-[4rem] md:pt-[4rem] md:pb-[4rem] text-center px-5 md:px-10 text-(--azul-escuro)"
       )}
     >
       <h2 className="font-1-xl mb-4">
