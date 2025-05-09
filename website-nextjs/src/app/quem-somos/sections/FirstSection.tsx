@@ -9,7 +9,7 @@ const FirstSection = () => {
           src={"/img/quem-somos/3-socios.jpg"}
           width={1200}
           height={1200}
-          className="h-full w-screen object-cover object-[80%_10%] absolute left-0 bottom-0 z-1"
+          className="h-full w-screen object-cover object-[52%] sm:object-center lg:object-[80%_10%] absolute left-0 right-0 bottom-0 z-1"
           sizes="100vw"
         />
         <div className="absolute bottom-0 h-full left-0 right-0 bg-(--azul-escuro)/85 z-5" />
