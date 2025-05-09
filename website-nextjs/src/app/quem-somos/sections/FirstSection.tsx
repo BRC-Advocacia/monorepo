@@ -19,7 +19,7 @@ const FirstSection = () => {
           </p>
           <h1 className="cor-0 font-3-xxl">
             Somos a sociedade de
-            <br /> advogados {` `} <span className="cor-p5">BRCR</span>.
+            <br /> advogados {` `} <span className="cor-p5">BRC</span>.
           </h1>
         </div>
       </div>
