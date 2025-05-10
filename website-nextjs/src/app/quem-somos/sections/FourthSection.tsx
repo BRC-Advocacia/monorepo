@@ -1,14 +1,13 @@
 import GlowingListItem from "@/components/quem-somos/GlowingListItem";
 import { cn } from "@/lib/utils";
-import { CalendarCheck2, Radar } from "lucide-react";
-import Image from "next/image";
+import { CalendarCheck2, Compass, HandHeart } from "lucide-react";
 import Link from "next/link";
 
 const FourthSection = () => {
   return (
     <section
       className={cn(
-        "px-5 md:px-10 py-[4rem] cor-0 text-center sm:text-start",
+        "px-5 md:px-10 py-[4rem] cor-0 text-center sm:text-start relative",
         "bg-gradient-to-b from-(--azul-escuro)/100 to-(--cor-11)/100"
       )}
     >
@@ -31,14 +30,26 @@ const FourthSection = () => {
               em âmbito nacional.
             </blockquote>
           </div>
+          <div className="relative z-10">
+            <Compass
+              className="hidden md:block text-(--azul-escuro)/100 mx-auto absolute right-0 left-0 z-1"
+              width={328}
+              height={200}
+            />
+            <Compass
+              className="text-(--cor-12)/10 mx-auto absolute right-0 left-0 scale-[2] -z-1"
+              width={328}
+              height={200}
+            />
+          </div>
 
-          <Image
+          {/* <Image
             width={328}
             height={328}
             alt="BRC Logo"
             className="mx-auto hidden md:block"
             src={"/img/logos/logo-branca.png"}
-          />
+          /> */}
         </div>
         <Link
           target="_blank"
@@ -56,7 +67,7 @@ const FourthSection = () => {
           <h3 className="font-1-xl ">
             Valores<span className="cor-p5">.</span>
           </h3>
-          <Radar className="-rotate-45" width={36} height={36} />
+          <HandHeart width={36} height={36} />
         </div>
         <div className="relative w-full z-10">
           <ul className="font-1-xs gap-2 cor-1 text-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full">
